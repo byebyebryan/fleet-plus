@@ -1,0 +1,12 @@
+<section class="illustration" data-routes aria-labelledby="routes-title">
+  <p class="eyebrow">Directional routing · fictional hosts</p>
+  <h3 id="routes-title">A route has a direction.</h3>
+  <p>Desk can reach Tower and Laptop. Tower and Laptop can reach each other. Neither has a route back to Desk.</p>
+  <div class="controls" aria-label="View routes from a host" hidden>
+    <button type="button" data-host="desk" aria-pressed="true">From Desk</button>
+    <button type="button" data-host="tower" aria-pressed="false">From Tower</button>
+    <button type="button" data-host="laptop" aria-pressed="false">From Laptop</button>
+  </div>
+  <div aria-live="polite" aria-atomic="true"><p class="route-list" data-route-list>Desk → Tower · Desk → Laptop</p><p data-route-text>Desk can read both peers. Neither peer has a configured route back to Desk.</p></div>
+  <p class="legend">Arrows mean “can initiate access to.” This illustrates configured membership, not a full mesh or live reachability.</p>
+</section>

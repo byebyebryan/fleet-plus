@@ -1,0 +1,14 @@
+<section class="illustration" data-read-path aria-labelledby="read-path-title">
+  <p class="eyebrow">Interactive explanation · fictional example</p>
+  <h3 id="read-path-title">From native runtime to utility.</h3>
+  <div class="flow" aria-label="Observation path"><span>Codex runtime</span><b aria-hidden="true">→</b><span>Agent Observer</span><b aria-hidden="true">→</b><span class="optional">Optional Mesh</span><b aria-hidden="true">→</b><span>Your utility</span></div>
+  <p>The native runtime owns the conversation. Observer supplies read-only facts; each utility chooses its own display.</p>
+  <div class="controls" aria-label="Observation example" hidden>
+    <button type="button" data-scene="local" aria-pressed="true">Local read</button>
+    <button type="button" data-scene="fleet" aria-pressed="false">Fleet read</button>
+    <button type="button" data-scene="partial" aria-pressed="false">Partial evidence</button>
+  </div>
+  <div class="status" data-scene-status data-kind="complete" aria-live="polite" aria-atomic="true"><strong data-scene-title>Local cached read</strong><p data-scene-text>A separately running Observer service publishes host-local facts. Your utility reads that cache; reading does not start a daemon or renew native evidence.</p></div>
+  <details><summary>Read all three cases</summary><p>Local clients read an explicitly hosted cache. Fleet clients add optional Mesh delivery through configured routes. Missing, incomplete or expired evidence remains uncertain; it cannot establish idle work, removal or an empty working set.</p></details>
+  <p class="legend">These controls explain the architecture. They do not contact a runtime or change a configuration.</p>
+</section>
