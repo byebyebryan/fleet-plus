@@ -3,7 +3,12 @@
 Find your Codex and Claude environments, then open or focus their native TUIs.
 One searchable Rofi picker covers local environments and configured SSH hosts.
 
-{{AGENT_PICKER}}
+<!-- fleet-plus:agent-picker -->
+![Agent Plus Rofi picker showing example local and remote environments and native TUI windows.](../../assets/agent-plus.png)
+
+*Actual Rofi rendering with sample data and a preview theme. No live sessions are
+shown; your Rofi theme controls its appearance.*
+<!-- /fleet-plus:agent-picker -->
 
 ## Native managers remain the daily interface
 

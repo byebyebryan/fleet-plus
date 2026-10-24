@@ -36,7 +36,16 @@ Mesh owns the host/route implementation. SSH Plus retains the public Host Mesh
 process facade and its own successful-connection history. They use one selected
 authority rather than maintaining competing host registries.
 
-{{ROUTES}}
+<!-- fleet-plus:routes -->
+For these fictional hosts, arrows mean **can initiate access to**:
+
+- Desk → Tower and Desk → Laptop.
+- Tower → Laptop.
+- Laptop → Tower.
+
+Neither Tower nor Laptop has a configured route back to Desk. These are configured
+membership relationships, not a claim of current reachability or a full mesh.
+<!-- /fleet-plus:routes -->
 
 Removing a host from one endpoint's roster withdraws that endpoint's configured
 access. Cached discovery must respect that membership. An existing native window

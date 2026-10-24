@@ -79,4 +79,10 @@ owner actions, not side effects of a build. Add every public file to the explici
 build inventory. Media attribution and hashes live in `assets/provenance.json`;
 retain the notices in `assets/LICENSES.txt`.
 
+Product Markdown includes ordinary images/text between `fleet-plus` enhancement
+comments. GitHub readers see those static fallbacks; the site builder replaces
+the marked sections with its accessible controls. Keep the fallback readable and
+complete, and use only the reviewed enhancement names. The build validates the
+fallback links and rejects missing, empty, duplicate or unknown markers.
+
 The [delivery plan](docs/delivery-plan.md) records first-edition scope and acceptance.

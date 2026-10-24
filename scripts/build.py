@@ -94,9 +94,48 @@ def link_for_source(source: str, target: str) -> str:
     raise ValueError(f"{source}: unregistered relative link {target}")
 
 
+def prepare_enhancements(text: str, source: str) -> tuple[str, dict[str, str]]:
+    """Replace marked, validated Markdown fallbacks only during the site build."""
+    names = {"dashboard", "read-path", "routes", "agent-picker"}
+    slots: dict[str, str] = {}
+    seen: set[str] = set()
+    pattern = re.compile(
+        r"^<!-- fleet-plus:([a-z-]+) -->\n(.*?)\n<!-- /fleet-plus:\1 -->$",
+        re.MULTILINE | re.DOTALL,
+    )
+
+    def replace(match):
+        name, fallback = match.groups()
+        if name not in names:
+            raise ValueError(f"{source}: unknown enhancement {name}")
+        if name in seen:
+            raise ValueError(f"{source}: duplicate enhancement {name}")
+        visible = re.sub(r"<!--.*?-->", "", fallback, flags=re.DOTALL).strip()
+        if not visible:
+            raise ValueError(f"{source}: empty enhancement fallback {name}")
+        for token in MarkdownIt().enable("table").parse(fallback):
+            for child in token.children or []:
+                if child.type == "link_open":
+                    link_for_source(source, child.attrGet("href") or "")
+                elif child.type == "image":
+                    link_for_source(source, child.attrGet("src") or "")
+        seen.add(name)
+        slot = f"FLEET_PLUS_ENHANCEMENT_{len(slots)}"
+        slots[slot] = name
+        return slot
+
+    if "{{" in text:
+        raise ValueError(f"{source}: use readable Markdown instead of template tokens")
+    prepared = pattern.sub(replace, text)
+    if re.search(r"<!--\s*/?fleet-plus:", prepared):
+        raise ValueError(f"{source}: unmatched enhancement marker")
+    return prepared, slots
+
+
 def markdown(source: str) -> str:
     parser = MarkdownIt("commonmark", {"html": False}).enable("table")
-    tokens = parser.parse((ROOT / source).read_text())
+    prepared, enhancements = prepare_enhancements((ROOT / source).read_text(), source)
+    tokens = parser.parse(prepared)
     headings: Counter[str] = Counter()
     for index, token in enumerate(tokens):
         if token.type == "heading_open":
@@ -142,14 +181,14 @@ def markdown(source: str) -> str:
         actions = f'<div class="actions"><a class="button" href="https://github.com/byebyebryan/{project["repo"]}#readme">Installation &amp; reference ↗</a><a class="small-link" href="https://github.com/byebyebryan/{project["repo"]}/releases">Releases ↗</a></div>'
         body = body.replace("</p>", "</p>" + actions, 1)
     replacements = {
-        "ROUTES": (ROOT / "site/routes.html").read_text(),
-        "READ_PATH": (ROOT / "site/read-path.html").read_text(),
-        "DASHBOARD": dashboard("observer-dashboard"),
-        "AGENT_PICKER": f'<figure><img class="product-image" src="{BASE}assets/agent-plus.png" alt="Agent Plus Rofi picker with local and remote example environments and native TUI windows" loading="lazy"><figcaption>Actual Rofi rendering with sample data and a preview theme. No live sessions are shown; your Rofi theme controls its appearance.</figcaption></figure>',
+        "routes": (ROOT / "site/routes.html").read_text(),
+        "read-path": (ROOT / "site/read-path.html").read_text(),
+        "dashboard": dashboard("observer-dashboard"),
+        "agent-picker": f'<figure><img class="product-image" src="{BASE}assets/agent-plus.png" alt="Agent Plus Rofi picker with local and remote example environments and native TUI windows" loading="lazy"><figcaption>Actual Rofi rendering with sample data and a preview theme. No live sessions are shown; your Rofi theme controls its appearance.</figcaption></figure>',
     }
-    for key, replacement in replacements.items():
-        body = body.replace("<p>{{" + key + "}}</p>", replacement)
-    if "{{" in body:
+    for slot, name in enhancements.items():
+        body = body.replace("<p>" + slot + "</p>", replacements[name])
+    if "FLEET_PLUS_ENHANCEMENT_" in body:
         raise ValueError(f"unresolved presentation include in {source}")
     return body
 

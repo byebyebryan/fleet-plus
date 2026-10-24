@@ -3,7 +3,13 @@
 Read-only Codex state for dashboards, diagnostics and agent utilities. Observe
 the native runtime where it lives, then choose a local or cross-host read path.
 
-{{DASHBOARD}}
+<!-- fleet-plus:dashboard -->
+![RLCD agent dashboard renderer showing fictional conversations and activity states.](../../assets/dashboard.png)
+
+*Production C renderer with fictional conversations and virtual time; this is a UI
+preview, not physical panel footage. [Watch the rendered demo](../../assets/dashboard.gif)
+or read the [media provenance](../../assets/provenance.json).*
+<!-- /fleet-plus:dashboard -->
 
 ## Useful facts, with their limits intact
 
@@ -19,7 +25,15 @@ the same public boundaries without depending on that display.
 
 ## Follow an observation
 
-{{READ_PATH}}
+<!-- fleet-plus:read-path -->
+**Codex runtime → Agent Observer → optional Mesh → your utility.**
+
+| Read path | What it does |
+| --- | --- |
+| Local cached read | A separately running Observer service supplies facts to your utility. Reading does not start a daemon or renew native evidence. |
+| Optional fleet delivery | Mesh carries already published observations over configured routes, preserving host outcomes, identities and evidence expiry. |
+| Partial or expired evidence | Incomplete or unavailable evidence stays explicit. A missing row cannot prove an empty working set, idle work or removal. |
+<!-- /fleet-plus:read-path -->
 
 ## Choose a read path
 
@@ -36,11 +50,15 @@ native conversation runtime state. Codex's owning daemon supplies that evidence.
 
 ## Start using it
 
-Python 3.11+ is required; native/service support targets Linux. Begin with the
-[repository quick start](https://github.com/byebyebryan/agent-observer#start-from-a-checkout)
-and [documentation directory](https://github.com/byebyebryan/agent-observer/blob/main/docs/README.md).
-Cached reads need an explicit service; working-set/fleet reads additionally need
-the compatible Mesh package, publisher and configured host routes.
+Follow [your first local Observer read](https://github.com/byebyebryan/agent-observer/blob/main/docs/getting-started.md):
+install the published core in its own environment, choose an existing Codex home,
+read local state and understand the table. Requires Linux, Python 3.11+ and your
+existing native Codex runtime. Mesh, Rofi and tmux are unnecessary for this path.
+
+For shared cached observations, use the [current Service 4 guide](https://github.com/byebyebryan/agent-observer/blob/main/docs/local-service.md).
+It covers an existing endpoint or a separately owned foreground publisher, cached
+reads, watching and cleanup. Fleet delivery is an optional next step after the
+local read works, with compatible Mesh, publishers and directional host routes.
 
 For a utility, use the [bounded public-read example](https://github.com/byebyebryan/agent-observer/blob/main/docs/utility-read-guide.md)
 and [API 4 contract](https://github.com/byebyebryan/agent-observer/blob/main/docs/api-v4.md).
@@ -58,7 +76,6 @@ does not depend on Observer. [Codex Plus](https://dev.byebyebryan.com/codex-plus
 provides separate native workflow augmentations. Neither relationship grants
 Observer action authority.
 
-The published a9/Mesh a25 working-set pair and independent consumer versions
-are covered by the [compatibility guide](../compatibility.md). That dated record
-includes Carbon's unresolved partial membership. Experimental delta/view-feed
-adoption and additional physical/native qualification retain separate gates.
+The [compatibility guide](../compatibility.md) records the published working-set
+pair, independent consumer versions and dated operational limits. Experimental
+transport adoption retains its own explicit selection and qualification.

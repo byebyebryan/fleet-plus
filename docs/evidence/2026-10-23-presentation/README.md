@@ -49,6 +49,15 @@ checked files. The main workflow runs checks before publishing this content;
 its containing source commit and hosted run identify the subsequent deployment.
 The manifest is a dated acceptance snapshot, not a lock on future site edits.
 
+## Final 20-file publication
+
+The [final publication receipt](final-publication.json) closes the follow-up's
+public-delivery gate explicitly: source `7ce2d1463b632144df83ad1f71b3fb8f289e7cbf`,
+[Pages run 40055914446](https://github.com/byebyebryan/fleet-plus/actions/runs/40055914446),
+10 pages and 20 HTTPS files verified against this directory's committed manifest.
+It records the completed edition above; later onboarding edits have their own
+source and delivery evidence. The original 19-file receipt remains historical.
+
 ## Retained boundaries
 
 The collection has six independent source/package owners and one shared site.

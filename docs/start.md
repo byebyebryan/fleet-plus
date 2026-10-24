@@ -13,11 +13,29 @@ you want, then follow the owning project's setup instructions.
 
 ## Start with Agent Observer
 
-Use the [Agent Observer product guide](projects/agent-observer.md) to understand
-its read paths. The [repository quick start](https://github.com/byebyebryan/agent-observer#start-from-a-checkout)
-installs the package in a dedicated environment and reports its API. Direct
-snapshot reads run on the native daemon's host; cached reads need an explicitly
-running service. Core/local observation does not require Mesh.
+The simplest complete path is a local read on the machine that already runs your
+Codex daemon. No fleet setup is required. Follow the
+[first local read recipe](https://github.com/byebyebryan/agent-observer/blob/main/docs/getting-started.md)
+to install the hash-pinned a9 core in its own Python environment.
+
+Once that environment is active, choose the source and read:
+
+```sh
+agent-observer api
+agent-observer list --host-scope workstation --provider codex \
+  --codex-home "${CODEX_HOME:-$HOME/.codex}"
+```
+
+Use your own logical host label and the Codex home you intend to inspect. `api`
+reports API 4 / snapshot-watch 6 without contacting a provider. `list` performs
+the explicit native read and shows host, provider, phase, runtime, activity age,
+turn/update information, identity and title. The linked recipe explains the table
+and how to inspect coverage when rows are missing or unknown.
+
+For multiple local readers, continue with the
+[current Service 4 recipe](https://github.com/byebyebryan/agent-observer/blob/main/docs/local-service.md).
+It explains an existing endpoint or a separately owned cache, with exact commands
+for reads, watches and shutdown. Local core/service use remains Mesh-free.
 
 For a new utility, use the [bounded public-read example](https://github.com/byebyebryan/agent-observer/blob/main/docs/utility-read-guide.md).
 It is a developer example using public facades, with explicit endpoint/identity

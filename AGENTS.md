@@ -18,6 +18,10 @@ Keep media provenance explicit: native rendering with fictional input is not a
 physical recording or live feed. Preserve dated owner evidence and link to it.
 Treat source, release, installed selection, consumer and physical acceptance separately.
 
+Keep linked Markdown independently readable on GitHub. Site enhancement comments
+must enclose complete static text/images; never replace that source content with
+custom placeholder tokens. Current setup links must lead to current protocols.
+
 Use rtk for shell commands. Preserve concurrent work. Run the site build/link and
 interaction gates before publication; verify current-head CI and actual served bytes.
 Do not delegate unless the user explicitly requests delegation or an applicable skill.

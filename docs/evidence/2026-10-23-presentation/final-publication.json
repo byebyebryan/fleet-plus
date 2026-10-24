@@ -1,0 +1,114 @@
+{
+  "scope": "Final 20-file Fleet Plus edition from the original presentation pass; a dated publication receipt, not a current deployment selector.",
+  "sourceRevision": "7ce2d1463b632144df83ad1f71b3fb8f289e7cbf",
+  "workflowRun": 40055914446,
+  "workflowUrl": "https://github.com/byebyebryan/fleet-plus/actions/runs/40055914446",
+  "site": "https://dev.byebyebryan.com/fleet-plus/",
+  "verifiedAt": "2026-10-24T05:28:00.726193+00:00",
+  "pages": 10,
+  "publicFilesVerified": 20,
+  "verification": "Every HTTPS-served file matched the committed public-content manifest SHA256.",
+  "manifestSha256": "e0f3f0e803d64fd5a921b8da7e5560bbaf893f06453597da8194aa318dea65e0",
+  "files": [
+    {
+      "path": ".nojekyll",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "architecture/index.html",
+      "sha256": "fc0e4351a51262eab2844865834759269ee66aa1a2c34a80e45035c1354814c0",
+      "bytes": 8317
+    },
+    {
+      "path": "assets/LICENSES.txt",
+      "sha256": "9ed178bd7e6d34e4ac486a7e7149e4df963be2835328d2982619933424166c16",
+      "bytes": 34680
+    },
+    {
+      "path": "assets/agent-plus.png",
+      "sha256": "7feaee0de386b96d89d017b3e793e77ba3dc25aa8d36f3e5f631d57b2b3f69e7",
+      "bytes": 33627
+    },
+    {
+      "path": "assets/dashboard.gif",
+      "sha256": "8b73aadf2143d782807104fff588a347af5cfe957e6c262a0eb550f442d5a5a0",
+      "bytes": 129513
+    },
+    {
+      "path": "assets/dashboard.png",
+      "sha256": "7bdf6cb770cbe0ab6cbf5c12388d497f4ee8d1a3c27ba9e992c73ccb5735092f",
+      "bytes": 2931
+    },
+    {
+      "path": "assets/provenance.json",
+      "sha256": "e05d9652a5b43d25289ffa463f8c37ebfd7b5ef47f10cd88544a5a157a530f12",
+      "bytes": 1612
+    },
+    {
+      "path": "assets/relationships.svg",
+      "sha256": "a546f59288cfd4edf23b2b713703eed22a40ff6a476cb97f8fe4de4bce5f6529",
+      "bytes": 3031
+    },
+    {
+      "path": "assets/site.js",
+      "sha256": "a861e58a6234e7521d1d92d6dc5ce5e866ca459b2efe00d0982df2b5110dc388",
+      "bytes": 3030
+    },
+    {
+      "path": "assets/style.css",
+      "sha256": "041871fa404a130ca4abfbf329b9749f8b7418bf38a8ec3e0f8da3d15bccd43e",
+      "bytes": 7964
+    },
+    {
+      "path": "compatibility/index.html",
+      "sha256": "76869d8ffce3cd444de29500337c457a513fb31549b60b2ffdaac2c53de3b651",
+      "bytes": 6616
+    },
+    {
+      "path": "index.html",
+      "sha256": "28cd63cc5f4c7faeb989605c396f1831aab84b7b6d587cfbb81be5d6e0e5ccd6",
+      "bytes": 8360
+    },
+    {
+      "path": "projects/agent-observer/index.html",
+      "sha256": "5f200e09425ab736d3c86753a9c5c4596d6baefbe3657a7618ff2468f8b8d89c",
+      "bytes": 8965
+    },
+    {
+      "path": "projects/agent-plus/index.html",
+      "sha256": "3887c3b54d3010c2db3ce3e6e1bd63e285eef14d01de3ebb20567efe7fdcb7f3",
+      "bytes": 5458
+    },
+    {
+      "path": "projects/mesh-plus/index.html",
+      "sha256": "06f2bf44ef4a8f548ab553adb3be38009ba9c39362d4e064366b82afc3a8cdbf",
+      "bytes": 5149
+    },
+    {
+      "path": "projects/ssh-plus/index.html",
+      "sha256": "21a9f3ceda8b7b4eae46177ca6ed34d8b7722df5d7e16dc91f8635db65069c56",
+      "bytes": 4417
+    },
+    {
+      "path": "projects/tmux-observer/index.html",
+      "sha256": "de57677dee1f214f35d5f413eb1b58c568c8addc050257f312d12b2c32057abf",
+      "bytes": 4774
+    },
+    {
+      "path": "projects/tmux-plus/index.html",
+      "sha256": "cbf1461858ea0f8ea219d2355257ab7241a895270dfca3f0563e43702ca82c31",
+      "bytes": 4666
+    },
+    {
+      "path": "sitemap.xml",
+      "sha256": "fd95644acafa3d98b68c93faecc93e77d9622d0c68eaa57bcced896252e5f045",
+      "bytes": 875
+    },
+    {
+      "path": "start/index.html",
+      "sha256": "6f032695c836caf2e1d16edc1fbc249856347ef15bf09edad0edffb8653588e6",
+      "bytes": 6515
+    }
+  ]
+}

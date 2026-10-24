@@ -68,5 +68,13 @@
     "liveFilesByteExact": 5,
     "feed": "XML content and entries match with only generated top-level build timestamp normalized"
   },
-  "metadataRepositories": 7
+  "metadataRepositories": 7,
+  "finalSitePublication": {
+    "sourceRevision": "7ce2d1463b632144df83ad1f71b3fb8f289e7cbf",
+    "workflowRun": 40055914446,
+    "workflowUrl": "https://github.com/byebyebryan/fleet-plus/actions/runs/40055914446",
+    "publicFilesVerified": 20,
+    "verifiedAt": "2026-10-24T05:28:00.726193+00:00",
+    "receipt": "final-publication.json"
+  }
 }
