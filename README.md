@@ -86,3 +86,7 @@ complete, and use only the reviewed enhancement names. The build validates the
 fallback links and rejects missing, empty, duplicate or unknown markers.
 
 The [delivery plan](docs/delivery-plan.md) records first-edition scope and acceptance.
+
+The [onboarding review corrections](docs/evidence/2026-10-23-onboarding/README.md)
+record current Service 4 guidance, readable Markdown fallbacks and their separately
+verified source, browser and public-delivery evidence.

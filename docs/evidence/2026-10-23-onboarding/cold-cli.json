@@ -1,0 +1,55 @@
+{
+  "package": "agent-observer",
+  "version": "0.7.0a9",
+  "installation": "Fresh venv; immutable public a9 URL with SHA256 checked by pip",
+  "api": {
+    "apiVersion": 4,
+    "hostLocal": true,
+    "nativeEventReplay": false,
+    "readCommands": [
+      "snapshot",
+      "list",
+      "show",
+      "watch",
+      "schema"
+    ],
+    "schemas": {
+      "snapshot": 6,
+      "watch": 6
+    }
+  },
+  "service": {
+    "durableReplay": false,
+    "embeddedSnapshotVersion": 6,
+    "hostLocal": true,
+    "limits": {
+      "envelopeBytes": 16384,
+      "frameBytes": 8404992,
+      "requestBytes": 16384
+    },
+    "nativeEventReplay": false,
+    "observationApiVersion": 4,
+    "operations": [
+      "status",
+      "snapshot",
+      "watch"
+    ],
+    "serviceProtocol": 4,
+    "stability": "prerelease"
+  },
+  "fixture": {
+    "cachedCommands": [
+      "status",
+      "list",
+      "snapshot",
+      "list --json",
+      "watch --human --count 2"
+    ],
+    "sessions": 3,
+    "socket": "owned private temporary endpoint",
+    "providerInvocations": 0,
+    "watchClosed": true,
+    "ownedPublisherCleanup": true
+  },
+  "scope": "Published-package metadata and synthetic Service 4 transport/CLI qualification; no ordinary Codex or managed service access."
+}

@@ -1,0 +1,66 @@
+{
+  "scope": "Review corrections: current Service 4 guidance, local-first onboarding, independent Markdown fallbacks and explicit publication receipts.",
+  "observer": {
+    "sourceRevision": "5af786f4eefbb375238a67ceba8923e803c8ec1b",
+    "workflowRun": 40066355541,
+    "workflowUrl": "https://github.com/byebyebryan/agent-observer/actions/runs/40066355541",
+    "changedFiles": [
+      "README.md",
+      "docs/README.md",
+      "docs/architecture.md",
+      "docs/shared-observation-service-client.md",
+      "docs/getting-started.md",
+      "docs/local-service.md"
+    ],
+    "sourceGate": {
+      "tests": 1138,
+      "markdownFiles": 270,
+      "requiredWorkingSetMesh": "0.1.0a25"
+    },
+    "runtimeChanges": false
+  },
+  "fleetPlus": {
+    "contentSourceRevision": "7b8bece0b9c84515fd21d03d5c324b02200ee82d",
+    "workflowRun": 40066417446,
+    "publicFilesVerified": 20,
+    "pages": 10,
+    "localLinks": 152,
+    "publicationTests": 8,
+    "localBrowserVisits": 40,
+    "localWidths": [
+      320,
+      390,
+      768,
+      1280
+    ],
+    "githubMarkdown": [
+      {
+        "source": "docs/projects/agent-observer.md",
+        "githubGfmRender": "pass",
+        "staticFallback": true
+      },
+      {
+        "source": "docs/projects/agent-plus.md",
+        "githubGfmRender": "pass",
+        "staticFallback": true
+      },
+      {
+        "source": "docs/architecture.md",
+        "githubGfmRender": "pass",
+        "staticFallback": true
+      }
+    ],
+    "liveBrowser": {
+      "visits": 6,
+      "widths": [
+        390,
+        1280
+      ],
+      "currentSetupLinks": true,
+      "interactiveFallbackEnhancements": true,
+      "errors": []
+    }
+  },
+  "original20FilePublication": "../2026-10-23-presentation/final-publication.json",
+  "ordinaryProviderInvocations": 0
+}
