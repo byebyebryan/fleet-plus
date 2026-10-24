@@ -50,5 +50,5 @@ The checkpoint's other accepted reads retain their own endpoint and time scope.
 
 Native collection, installed bytes, consumer behavior, graphical acceptance and
 physical panel/reboot checks are separate. This website adds no new runtime or
-physical qualification. The [validation workflow](https://github.com/byebyebryan/agent-observer/blob/main/docs/observation-validation-workflow.md)
+physical qualification. The [validation workflow](https://github.com/byebyebryan/agent-observer/blob/main/docs/maintenance/validation.md)
 explains the independent evidence required for new observation claims.

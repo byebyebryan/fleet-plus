@@ -27,7 +27,7 @@ route back to you. See the [directional example](../architecture.md#directional-
 Requires Python 3.11+, Rofi 2.0+, OpenSSH and a terminal accepting `-e`.
 The default authority backend requires a compatible Mesh installation.
 Follow the [repository installation and configuration](https://github.com/byebyebryan/rofi-ssh-plus#install-and-invoke)
-and [Host Mesh guide](https://github.com/byebyebryan/rofi-ssh-plus/blob/main/docs/HOST_MESH_V1.md).
+and [Host Mesh guide](https://github.com/byebyebryan/rofi-ssh-plus/blob/main/docs/reference/host-mesh-v1.md).
 
 The public process contract, authority selection and picker history have separate
 owners. Updating an unrelated Observer or dashboard does not replace the SSH

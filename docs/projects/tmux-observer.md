@@ -22,7 +22,7 @@ now opens native agent managers directly and has no Tmux dependency.
 
 Python 3.11+ is required; native/service support targets Linux and the configured
 default tmux server. Begin with the [read-interface examples](https://github.com/byebyebryan/tmux-observer#use-the-read-interfaces)
-and [runtime architecture](https://github.com/byebyebryan/tmux-observer/blob/main/docs/runtime-architecture.md).
+and [runtime architecture](https://github.com/byebyebryan/tmux-observer/blob/main/docs/reference/architecture.md).
 Cached clients need the explicit owner/prepared services. Remote clients need
 compatible Mesh/SSH configuration and the matching source publisher.
 

@@ -37,7 +37,7 @@ the remote noninteractive PATH.
 
 Follow the [repository setup](https://github.com/byebyebryan/rofi-agent-plus#install),
 [configuration example](https://github.com/byebyebryan/rofi-agent-plus/blob/main/examples/direct.toml)
-and [current architecture](https://github.com/byebyebryan/rofi-agent-plus/blob/main/docs/architecture.md).
+and [current architecture](https://github.com/byebyebryan/rofi-agent-plus/blob/main/docs/reference/architecture.md).
 The Python package has no runtime Python dependencies.
 
 ## Supported scope

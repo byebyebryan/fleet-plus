@@ -28,8 +28,8 @@ illustrates why one endpoint's roster does not authorize reverse access.
 ## Start using it
 
 Python 3.11+ is required. Follow the [repository setup](https://github.com/byebyebryan/mesh-plus#install-and-inspect),
-[Host Mesh boundary](https://github.com/byebyebryan/mesh-plus/blob/main/docs/ssh-plus-integration.md)
-and [SDK reference](https://github.com/byebyebryan/mesh-plus/blob/main/docs/sdk-api.md).
+[Host Mesh boundary](https://github.com/byebyebryan/mesh-plus/blob/main/docs/guides/host-routing.md)
+and [SDK reference](https://github.com/byebyebryan/mesh-plus/blob/main/docs/reference/sdk.md).
 Domain reads require their compatible Observer package and configured publisher.
 Mesh itself does not query a native provider or start a collector.
 

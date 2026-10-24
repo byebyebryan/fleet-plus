@@ -19,7 +19,7 @@ generic/manual tmux purpose; it is not a required agent-runtime layer.
 ## Start using it
 
 Follow the [repository launcher instructions](https://github.com/byebyebryan/rofi-tmux-plus#launch-the-picker)
-and [development/setup guide](https://github.com/byebyebryan/rofi-tmux-plus/blob/main/docs/development.md).
+and [development/setup guide](https://github.com/byebyebryan/rofi-tmux-plus/blob/main/docs/maintenance/development.md).
 Use Python 3.11+, the supported Rofi native mode and the exact pinned Tmux
 Observer payload. Cached views require the accepted prepared services; remote
 views require their configured Mesh/SSH route and publisher.

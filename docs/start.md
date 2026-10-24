@@ -33,11 +33,11 @@ turn/update information, identity and title. The linked recipe explains the tabl
 and how to inspect coverage when rows are missing or unknown.
 
 For multiple local readers, continue with the
-[current Service 4 recipe](https://github.com/byebyebryan/agent-observer/blob/main/docs/local-service.md).
+[current Service 4 recipe](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/local-service.md).
 It explains an existing endpoint or a separately owned cache, with exact commands
 for reads, watches and shutdown. Local core/service use remains Mesh-free.
 
-For a new utility, use the [bounded public-read example](https://github.com/byebyebryan/agent-observer/blob/main/docs/utility-read-guide.md).
+For a new utility, use the [bounded public-read example](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/read-utilities.md).
 It is a developer example using public facades, with explicit endpoint/identity
 inputs and a bounded lifetime. It does not install a new dashboard or daemon.
 

@@ -55,13 +55,13 @@ install the published core in its own environment, choose an existing Codex home
 read local state and understand the table. Requires Linux, Python 3.11+ and your
 existing native Codex runtime. Mesh, Rofi and tmux are unnecessary for this path.
 
-For shared cached observations, use the [current Service 4 guide](https://github.com/byebyebryan/agent-observer/blob/main/docs/local-service.md).
+For shared cached observations, use the [current Service 4 guide](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/local-service.md).
 It covers an existing endpoint or a separately owned foreground publisher, cached
 reads, watching and cleanup. Fleet delivery is an optional next step after the
 local read works, with compatible Mesh, publishers and directional host routes.
 
-For a utility, use the [bounded public-read example](https://github.com/byebyebryan/agent-observer/blob/main/docs/utility-read-guide.md)
-and [API 4 contract](https://github.com/byebyebryan/agent-observer/blob/main/docs/api-v4.md).
+For a utility, use the [bounded public-read example](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/read-utilities.md)
+and [API 4 contract](https://github.com/byebyebryan/agent-observer/blob/main/docs/reference/read-api.md).
 The example supplies a content-free diagnostic summary; it is a developer example,
 not a new daemon, wire contract or installed product.
 
