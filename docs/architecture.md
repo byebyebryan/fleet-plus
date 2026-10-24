@@ -3,6 +3,11 @@
 Native Codex and Claude managers own their conversations and work. Fleet Plus's
 projects supply observation, host access and independent desktop conveniences.
 
+![Project relationships: optional Observer delivery through Mesh, native entry through SSH Plus, and independent Tmux clients.](../assets/relationships.svg)
+
+*Arrows show interface use; dashed arrows are optional delivery. This diagram
+describes project relationships. Configured host access has its own direction.*
+
 ## Four responsibilities
 
 | Responsibility | Projects | Boundary |
@@ -55,6 +60,9 @@ acceptance evidence. Fleet Plus owns the shared presentation and explanations.
 Managed manifests stay with the deployment owner. The six projects retain
 independent release versions; the [compatibility overview](compatibility.md)
 links to evidence for particular combinations.
+
+The [repository and presentation decision](https://github.com/byebyebryan/fleet-plus/blob/main/docs/decisions/0001-project-and-presentation-boundaries.md)
+records why this shared site preserves independent projects.
 
 [Codex Plus](https://dev.byebyebryan.com/codex-plus/) supplies workers, watches,
 peer coordination and browser reports around native Codex. It is related work,

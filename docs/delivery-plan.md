@@ -61,3 +61,8 @@ Keep repositories separate. Fleet Plus supplies a shared reading and presentatio
 home, not a unified runtime release. Revisit source consolidation only with evidence
 of recurring coordination cost. Codex Plus and hardware dashboards are related
 projects/consumers with independent source and delivery owners.
+
+## Delivery record
+
+The first-edition checkpoints and their separate source, CI, metadata, browser and
+public-byte evidence are recorded in the [presentation receipt](evidence/2026-10-23-presentation/README.md).

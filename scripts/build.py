@@ -51,6 +51,7 @@ ASSETS = {
     "agent-plus.png",
     "provenance.json",
     "LICENSES.txt",
+    "relationships.svg",
 }
 
 
@@ -88,6 +89,8 @@ def link_for_source(source: str, target: str) -> str:
             + SOURCE_ROUTES[resolved]
             + ("#" + parsed.fragment if parsed.fragment else "")
         )
+    if resolved.startswith("assets/") and resolved.removeprefix("assets/") in ASSETS:
+        return BASE + resolved
     raise ValueError(f"{source}: unregistered relative link {target}")
 
 
@@ -105,6 +108,10 @@ def markdown(source: str) -> str:
             )
         if token.children:
             for child in token.children:
+                if child.type == "image":
+                    child.attrSet(
+                        "src", link_for_source(source, child.attrGet("src") or "")
+                    )
                 if child.type == "link_open":
                     child.attrSet(
                         "href", link_for_source(source, child.attrGet("href") or "")
@@ -113,6 +120,19 @@ def markdown(source: str) -> str:
         '<div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable reference table"><table>\n'
     )
     parser.renderer.rules["table_close"] = lambda *_: "</table></div>\n"
+    original_image = parser.renderer.rules["image"]
+
+    def image_rule(tokens, idx, options, env):
+        rendered = original_image(tokens, idx, options, env)
+        if tokens[idx].attrGet("src") == BASE + "assets/relationships.svg":
+            return (
+                '<span class="diagram-scroll" tabindex="0" role="region" aria-label="Scrollable project relationship diagram">'
+                + rendered
+                + "</span>"
+            )
+        return rendered
+
+    parser.renderer.rules["image"] = image_rule
     body = parser.renderer.render(tokens, parser.options, {})
     body = body.replace("<p>", '<p class="lede">', 1)
     project = next(

@@ -1,0 +1,111 @@
+[
+  {
+    "name": "mesh-plus",
+    "description": "Host routing and bounded cached-state delivery for multi-host tools.",
+    "homepage": "https://dev.byebyebryan.com/fleet-plus/projects/mesh-plus/",
+    "topics": [
+      "developer-tools",
+      "distributed-systems",
+      "fleet-plus",
+      "ipc",
+      "linux",
+      "observability",
+      "python",
+      "ssh"
+    ]
+  },
+  {
+    "name": "agent-observer",
+    "description": "Read-only Codex session observation for dashboards, diagnostics and agent utilities.",
+    "homepage": "https://dev.byebyebryan.com/fleet-plus/projects/agent-observer/",
+    "topics": [
+      "codex",
+      "developer-tools",
+      "fleet-plus",
+      "linux",
+      "monitoring",
+      "observability",
+      "python"
+    ]
+  },
+  {
+    "name": "tmux-observer",
+    "description": "Passive tmux session observation and shared local and remote views.",
+    "homepage": "https://dev.byebyebryan.com/fleet-plus/projects/tmux-observer/",
+    "topics": [
+      "developer-tools",
+      "fleet-plus",
+      "ipc",
+      "linux",
+      "mesh-plus",
+      "observability",
+      "python",
+      "ssh",
+      "tmux"
+    ]
+  },
+  {
+    "name": "rofi-ssh-plus",
+    "description": "Rofi SSH host picker and public Host Mesh routing interface.",
+    "homepage": "https://dev.byebyebryan.com/fleet-plus/projects/ssh-plus/",
+    "topics": [
+      "developer-tools",
+      "fleet-plus",
+      "linux",
+      "python",
+      "rofi",
+      "ssh"
+    ]
+  },
+  {
+    "name": "rofi-tmux-plus",
+    "description": "Rofi picker and CLI for local and remote tmux sessions, with guarded session actions.",
+    "homepage": "https://dev.byebyebryan.com/fleet-plus/projects/tmux-plus/",
+    "topics": [
+      "developer-tools",
+      "fleet-plus",
+      "linux",
+      "python",
+      "rofi",
+      "session-management",
+      "ssh",
+      "tmux",
+      "tmux-observer",
+      "wayland"
+    ]
+  },
+  {
+    "name": "rofi-agent-plus",
+    "description": "Rofi launcher for local and remote Codex and Claude TUIs, with environment discovery and exact window focus.",
+    "homepage": "https://dev.byebyebryan.com/fleet-plus/projects/agent-plus/",
+    "topics": [
+      "claude-code",
+      "codex",
+      "developer-tools",
+      "fleet-plus",
+      "kitty",
+      "linux",
+      "niri",
+      "python",
+      "rofi",
+      "ssh",
+      "tui"
+    ]
+  },
+  {
+    "name": "fleet-plus",
+    "description": "Multi-host observation, SSH access and desktop tools, featuring Agent Observer.",
+    "homepage": "https://dev.byebyebryan.com/fleet-plus/",
+    "topics": [
+      "agent-observer",
+      "codex",
+      "developer-tools",
+      "fleet-plus",
+      "linux",
+      "observability",
+      "rofi",
+      "ssh",
+      "tmux"
+    ]
+  }
+]

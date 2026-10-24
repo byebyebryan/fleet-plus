@@ -2,46 +2,127 @@
   "site": "https://dev.byebyebryan.com/fleet-plus/",
   "projects": [
     {
-      "slug": "agent-observer", "name": "Agent Observer", "repo": "agent-observer",
-      "role": "Observation", "description": "Read-only Codex session observation for dashboards, diagnostics and agent utilities.",
-      "topics": ["codex", "developer-tools", "linux", "monitoring", "observability", "python"],
+      "slug": "agent-observer",
+      "name": "Agent Observer",
+      "repo": "agent-observer",
+      "role": "Observation",
+      "description": "Read-only Codex session observation for dashboards, diagnostics and agent utilities.",
+      "topics": [
+        "codex",
+        "developer-tools",
+        "fleet-plus",
+        "linux",
+        "monitoring",
+        "observability",
+        "python"
+      ],
       "docs": "https://github.com/byebyebryan/agent-observer/blob/main/docs/utility-read-guide.md",
-      "release": "v0.7.0a9", "featured": true
+      "release": "v0.7.0a9",
+      "featured": true
     },
     {
-      "slug": "mesh-plus", "name": "Mesh Plus", "repo": "mesh-plus",
-      "role": "Host authority and delivery", "description": "Host routing and bounded cached-state delivery for multi-host tools.",
-      "topics": ["developer-tools", "distributed-systems", "ipc", "linux", "observability", "python", "ssh"],
+      "slug": "mesh-plus",
+      "name": "Mesh Plus",
+      "repo": "mesh-plus",
+      "role": "Host authority and delivery",
+      "description": "Host routing and bounded cached-state delivery for multi-host tools.",
+      "topics": [
+        "developer-tools",
+        "distributed-systems",
+        "fleet-plus",
+        "ipc",
+        "linux",
+        "observability",
+        "python",
+        "ssh"
+      ],
       "docs": "https://github.com/byebyebryan/mesh-plus/blob/main/docs/sdk-api.md",
-      "release": "v0.1.0a25", "featured": false
+      "release": "v0.1.0a25",
+      "featured": false
     },
     {
-      "slug": "ssh-plus", "name": "SSH Plus", "repo": "rofi-ssh-plus",
-      "role": "Host access", "description": "Rofi SSH host picker and public Host Mesh routing interface.",
-      "topics": ["developer-tools", "linux", "python", "rofi", "ssh"],
+      "slug": "ssh-plus",
+      "name": "SSH Plus",
+      "repo": "rofi-ssh-plus",
+      "role": "Host access",
+      "description": "Rofi SSH host picker and public Host Mesh routing interface.",
+      "topics": [
+        "developer-tools",
+        "fleet-plus",
+        "linux",
+        "python",
+        "rofi",
+        "ssh"
+      ],
       "docs": "https://github.com/byebyebryan/rofi-ssh-plus/blob/main/README.md",
-      "release": null, "featured": false
+      "release": null,
+      "featured": false
     },
     {
-      "slug": "agent-plus", "name": "Agent Plus", "repo": "rofi-agent-plus",
-      "role": "Native TUI entry", "description": "Rofi launcher for local and remote Codex and Claude TUIs, with environment discovery and exact window focus.",
-      "topics": ["claude-code", "codex", "developer-tools", "kitty", "linux", "niri", "python", "rofi", "ssh", "tui"],
+      "slug": "agent-plus",
+      "name": "Agent Plus",
+      "repo": "rofi-agent-plus",
+      "role": "Native TUI entry",
+      "description": "Rofi launcher for local and remote Codex and Claude TUIs, with environment discovery and exact window focus.",
+      "topics": [
+        "claude-code",
+        "codex",
+        "developer-tools",
+        "fleet-plus",
+        "kitty",
+        "linux",
+        "niri",
+        "python",
+        "rofi",
+        "ssh",
+        "tui"
+      ],
       "docs": "https://github.com/byebyebryan/rofi-agent-plus/blob/main/README.md",
-      "release": "v0.15.0a15", "featured": false
+      "release": "v0.15.0a15",
+      "featured": false
     },
     {
-      "slug": "tmux-observer", "name": "Tmux Observer", "repo": "tmux-observer",
-      "role": "Tmux facts and clients", "description": "Passive tmux session observation and shared local and remote views.",
-      "topics": ["developer-tools", "ipc", "linux", "mesh-plus", "observability", "python", "ssh", "tmux"],
+      "slug": "tmux-observer",
+      "name": "Tmux Observer",
+      "repo": "tmux-observer",
+      "role": "Tmux facts and clients",
+      "description": "Passive tmux session observation and shared local and remote views.",
+      "topics": [
+        "developer-tools",
+        "fleet-plus",
+        "ipc",
+        "linux",
+        "mesh-plus",
+        "observability",
+        "python",
+        "ssh",
+        "tmux"
+      ],
       "docs": "https://github.com/byebyebryan/tmux-observer/blob/main/docs/README.md",
-      "release": "v0.6.0a9", "featured": false
+      "release": "v0.6.0a9",
+      "featured": false
     },
     {
-      "slug": "tmux-plus", "name": "Tmux Plus", "repo": "rofi-tmux-plus",
-      "role": "Tmux browsing and actions", "description": "Rofi picker and CLI for local and remote tmux sessions, with guarded session actions.",
-      "topics": ["developer-tools", "linux", "python", "rofi", "session-management", "ssh", "tmux", "tmux-observer", "wayland"],
+      "slug": "tmux-plus",
+      "name": "Tmux Plus",
+      "repo": "rofi-tmux-plus",
+      "role": "Tmux browsing and actions",
+      "description": "Rofi picker and CLI for local and remote tmux sessions, with guarded session actions.",
+      "topics": [
+        "developer-tools",
+        "fleet-plus",
+        "linux",
+        "python",
+        "rofi",
+        "session-management",
+        "ssh",
+        "tmux",
+        "tmux-observer",
+        "wayland"
+      ],
       "docs": "https://github.com/byebyebryan/rofi-tmux-plus/blob/main/docs/README.md",
-      "release": "v0.12.0a8", "featured": false
+      "release": "v0.12.0a8",
+      "featured": false
     }
   ]
 }

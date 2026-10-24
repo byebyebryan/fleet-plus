@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Fleet Plus project relationships</title>
+  <desc id="desc">Agent Observer and Tmux Observer optionally use Mesh delivery. Agent Plus uses SSH Plus host routes. Tmux Plus uses Tmux Observer and SSH Plus routes. SSH Plus uses Mesh's shared host authority. Native managers retain conversation ownership.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#176755"/></marker>
+    <style>text{font-family:system-ui,sans-serif;fill:#172d2b}.name{font-size:24px;font-weight:650}.detail{font-size:16px;fill:#536460}.edge{font-size:15px;fill:#176755}.box{fill:#fffef9;stroke:#b7c9bc;stroke-width:2}.line{fill:none;stroke:#176755;stroke-width:2;marker-end:url(#arrow)}.optional{stroke-dasharray:7 6}</style>
+  </defs>
+  <rect width="960" height="540" rx="12" fill="#f6f5ef"/>
+  <rect class="box" x="30" y="30" width="265" height="105" rx="8" style="fill:#e8efe7;stroke:#176755"/>
+  <text class="name" x="50" y="72">Agent Observer</text><text class="detail" x="50" y="105">Read-only Codex facts</text>
+  <rect class="box" x="350" y="30" width="265" height="105" rx="8"/>
+  <text class="name" x="370" y="72">Agent Plus</text><text class="detail" x="370" y="105">Native TUI entry / focus</text>
+  <rect class="box" x="675" y="30" width="255" height="105" rx="8"/>
+  <text class="name" x="695" y="72">Tmux Plus</text><text class="detail" x="695" y="105">Browsing / explicit intent</text>
+  <rect class="box" x="350" y="240" width="265" height="100" rx="8"/>
+  <text class="name" x="370" y="280">SSH Plus</text><text class="detail" x="370" y="313">Picker / Host Mesh facade</text>
+  <rect class="box" x="675" y="240" width="255" height="100" rx="8"/>
+  <text class="name" x="695" y="280">Tmux Observer</text><text class="detail" x="695" y="313">Facts / separate actions</text>
+  <rect class="box" x="30" y="440" width="900" height="75" rx="8"/>
+  <text class="name" x="50" y="484">Mesh Plus</text><text class="detail" x="250" y="484">Shared host authority + bounded cached-state delivery</text>
+  <path class="line optional" d="M162 135 V438"/><text class="edge" x="177" y="265">Optional</text><text class="edge" x="177" y="287">state delivery</text>
+  <path class="line" d="M482 135 V238"/><text class="edge" x="495" y="190">Host routes</text>
+  <path class="line" d="M802 135 V238"/><text class="edge" x="814" y="178">Facts +</text><text class="edge" x="814" y="200">actions</text>
+  <path class="line" d="M675 110 L615 238"/><text class="edge" x="649" y="212" text-anchor="end">Host routes</text>
+  <path class="line" d="M482 340 V438"/><text class="edge" x="495" y="392">Shared authority</text>
+  <path class="line optional" d="M802 340 V438"/><text class="edge" x="788" y="382" text-anchor="end">Optional</text><text class="edge" x="788" y="404" text-anchor="end">state delivery</text>
+</svg>

@@ -12,7 +12,8 @@ pair serves generic tmux workflows. Choose the pieces your workflow needs.
 [Choose your setup](docs/start.md) · [Architecture](docs/architecture.md) ·
 [Compatibility and evidence](docs/compatibility.md)
 
-Publication is recorded separately from local builds in the delivery evidence.
+Publication is recorded separately from local builds in the
+[delivery evidence](docs/evidence/2026-10-23-presentation/README.md).
 
 ## Projects
 

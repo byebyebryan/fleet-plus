@@ -8,7 +8,7 @@ import { chromium } from 'playwright';
 
 const output = path.resolve(process.argv[2] || '');
 if (!process.argv[2]) throw new Error('Pass the checked site output directory.');
-const mime = {'.html':'text/html', '.css':'text/css', '.js':'text/javascript', '.png':'image/png', '.gif':'image/gif', '.json':'application/json'};
+const mime = {'.html':'text/html', '.css':'text/css', '.js':'text/javascript', '.png':'image/png', '.gif':'image/gif', '.svg':'image/svg+xml', '.json':'application/json'};
 const server = http.createServer(async (req, res) => {
   try {
     const url = new URL(req.url, 'http://localhost');

@@ -1,0 +1,72 @@
+{
+  "scope": "Documentation, repository metadata, Fleet Plus site and devlog presentation; no runtime artifact or selection change.",
+  "componentSources": {
+    "mesh-plus": {
+      "sha": "7dbacd2030117577ffe2f783ed694cad9e639aec",
+      "workflowRun": 40055002773
+    },
+    "agent-observer": {
+      "sha": "be0df8c52dcfbbab660a71aa81e297dd8619b75a",
+      "workflowRun": 40055006626
+    },
+    "tmux-observer": {
+      "sha": "af66fd44230c5e30fc7b277617fd19a361dbecf5",
+      "workflowRun": 40055105239
+    },
+    "rofi-ssh-plus": {
+      "sha": "8e95f7e4ddd81155e819c012bd8b954581a48c94",
+      "workflowRun": 40055110135
+    },
+    "rofi-tmux-plus": {
+      "sha": "3bc85b9587d18d921dcf4585c5534aa2ccd78583",
+      "workflowRun": 40055116014
+    },
+    "rofi-agent-plus": {
+      "sha": "7dfee11a423ab397bcf500b752adf579a5301d19",
+      "workflowRun": 40055121834
+    },
+    "devlog": {
+      "sha": "416341829154beec47dec0a134d78de06917d74b",
+      "workflowRun": 40055359386
+    }
+  },
+  "firstSitePublication": {
+    "sha": "e7ed76910eca15ee1281f390460f4af19b7a677e",
+    "workflowRun": 40055380966,
+    "publicFilesVerified": 19
+  },
+  "followupSourceQualification": {
+    "pages": 10,
+    "files": 20,
+    "localLinks": 153,
+    "browserVisits": 40,
+    "viewports": [
+      320,
+      390,
+      768,
+      1280
+    ],
+    "checks": [
+      "observation examples",
+      "directional routes",
+      "motion controls",
+      "keyboard navigation",
+      "no-JavaScript reading",
+      "project relationship SVG"
+    ]
+  },
+  "devlog": {
+    "notes": 2,
+    "browserVisits": 16,
+    "viewports": [
+      320,
+      390,
+      768,
+      1280
+    ],
+    "mediaHashesPreserved": 12,
+    "liveFilesByteExact": 5,
+    "feed": "XML content and entries match with only generated top-level build timestamp normalized"
+  },
+  "metadataRepositories": 7
+}
