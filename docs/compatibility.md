@@ -1,11 +1,36 @@
 # Compatibility and evidence
 
-This is a dated reading guide, reviewed on **2026-10-23**. Exact artifact inputs
-and accepted endpoints belong to the linked owner records. Installed roles can
-retain different reviewed versions; source head, public release and deployment
-selection are different facts.
+This guide preserves the reviewed **2026-10-23** checkpoint and adds a current
+**2026-10-25** update. Public release records bind artifact and qualification
+inputs; installed selections remain in operator-owned manifests. Source revision,
+public release, installed selection, native evidence, consumer behavior and
+physical acceptance are separate checkpoints.
 
-## Public release checkpoint
+## Current checkpoint — 2026-10-25
+
+Agent Observer **0.7.0a10** publishes working-set coverage reasons with the API 4,
+snapshot 6, Service 4 and working-set 1 contracts unchanged. Its paired Mesh
+remains **0.1.0a25**. See the [a10 release](https://github.com/byebyebryan/agent-observer/releases/tag/v0.7.0a10),
+[immutable Observer wheel](https://github.com/byebyebryan/agent-observer/releases/download/v0.7.0a10/agent_observer-0.7.0a10-py3-none-any.whl),
+[artifact manifest](https://github.com/byebyebryan/agent-observer/releases/download/v0.7.0a10/observer-0.7.0a10.json)
+and [release provenance](https://github.com/byebyebryan/agent-observer/releases/download/v0.7.0a10/provenance.json)
+for exact inputs and qualification evidence. The current [working-set guide](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/working-set.md)
+explains membership, coverage and bounded reads.
+
+The operator-owned private selection at dotfiles commit `d4d780b` enables the
+a10 / Mesh a25 working-set reader on Snap, Starship and Carbon. Independent
+selections remain: full publishers use Observer a5 / Mesh a20; the dashboard
+uses Observer a8 / Mesh a24.
+
+Oct 25 cached producer/Mesh reads show complete working-set coverage for Starship
+and Snap Default/Work; Carbon is partial with reason `clock_discontinuity`.
+Carbon's cached inventory reported complete source coverage and included parked
+threads. The exact historical clock event was not retained and remains
+unattributed. Later stable clocks do not clear guards for unchanged native
+activity. These scoped cached reads establish neither permanent fleet
+completeness nor new independent native or physical qualification.
+
+## Public release checkpoint — 2026-10-23 (historical)
 
 | Role | Reviewed public input | Owner evidence |
 | --- | --- | --- |
@@ -30,18 +55,18 @@ Tmux Plus a8 is bundle-only. Its historical inner-wheel digest does not imply
 that a matching standalone wheel was published. Install/verify the exact owning
 bundle and Observer pin rather than substituting a source build with the same version.
 
-## Independent installed roles
+## Independent installed roles at the 2026-10-23 checkpoint
 
 At that checkpoint, the full Agent publisher retained Observer a5 / Mesh a20,
 the dashboard retained its reviewed Observer a8 / Mesh a24 bundle, and SSH
 authority retained its independent Mesh a6 selection. These are intentionally
 different roles, not a request to upgrade them all to the newest package.
 
-The [deployment owner](https://github.com/byebyebryan/dotfiles/tree/main/deployments)
-records effective host/home selections and rollback inputs. A current service
-status alone establishes neither complete source coverage nor device acceptance.
+Private operator-owned deployment manifests record effective host/home selections
+and rollback inputs. A current service status alone establishes neither complete
+source coverage nor device acceptance.
 
-## Known bounds
+## Known bounds at the 2026-10-23 checkpoint
 
 The closeout reported **partial / membership_incomplete** for Carbon working-set
 membership, with a ready full cached service. Its root cause remained unresolved.

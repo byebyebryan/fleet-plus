@@ -16,7 +16,7 @@ you want, then follow the owning project's setup instructions.
 The simplest complete path is a local read on the machine that already runs your
 Codex daemon. No fleet setup is required. Follow the
 [first local read recipe](https://github.com/byebyebryan/agent-observer/blob/main/docs/getting-started.md)
-to install the hash-pinned a9 core in its own Python environment.
+to install the published, hash-pinned 0.7.0a10 core in its own Python environment.
 
 Once that environment is active, choose the source and read:
 
@@ -36,6 +36,9 @@ For multiple local readers, continue with the
 [current Service 4 recipe](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/local-service.md).
 It explains an existing endpoint or a separately owned cache, with exact commands
 for reads, watches and shutdown. Local core/service use remains Mesh-free.
+
+For working-set readers, use the current [working-set guide](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/working-set.md)
+for membership, coverage and bounded read semantics.
 
 For a new utility, use the [bounded public-read example](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/read-utilities.md).
 It is a developer example using public facades, with explicit endpoint/identity
@@ -72,6 +75,6 @@ and guarded lifecycle actions have separate responsibilities.
 
 Use your deployment owner to update an existing managed setup. This site's
 examples do not replace per-role manifests or install all six projects together.
-The maintainer uses [chezmoi](https://github.com/byebyebryan/dotfiles) with explicit
+The maintainer uses a private, operator-managed chezmoi setup with explicit
 artifact pins and scoped application. Public release, installed selection,
 native behavior and device acceptance remain separate evidence.
