@@ -18,10 +18,12 @@ See the [a11 release](https://github.com/byebyebryan/agent-observer/releases/tag
 and [provenance](https://github.com/byebyebryan/agent-observer/releases/download/v0.7.0a11/provenance.json).
 
 The operator-owned selection at dotfiles commit `f5c4782` advances collectors,
-the public reader and working-set bridges to a11. Snap Default/Work and Starship
+the public reader and working-set bridges to a11. Snap Default/Work, Starship and Carbon
 have verified installed bytes, clean scoped managed status and complete cached
-coverage after deployment. Snap also passed rollback/reselection. Carbon is
-offline and its rollout remains pending. Full publishers retain Observer a5 /
+coverage after deployment. Snap also passed rollback/reselection. Carbon's
+outbound reads of Starship and Snap Default/Work pass, with the directional
+host graph preserved. Its local read has complete coverage and no selected
+members at this sample. Full publishers retain Observer a5 /
 Mesh a20; the dashboard retains Observer a8 / Mesh a24. No reverse host route
 or experimental transport was enabled.
 
