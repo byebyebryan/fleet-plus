@@ -16,7 +16,7 @@ you want, then follow the owning project's setup instructions.
 The simplest complete path is a local read on the machine that already runs your
 Codex daemon. No fleet setup is required. Follow the
 [first local read recipe](https://github.com/byebyebryan/agent-observer/blob/main/docs/getting-started.md)
-to install the published, hash-pinned 0.7.0a10 core in its own Python environment.
+to install the published, hash-pinned 0.7.0a11 core in its own Python environment.
 
 Once that environment is active, choose the source and read:
 

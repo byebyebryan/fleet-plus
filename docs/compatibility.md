@@ -1,12 +1,39 @@
 # Compatibility and evidence
 
 This guide preserves the reviewed **2026-10-23** checkpoint and adds a current
-**2026-10-25** update. Public release records bind artifact and qualification
+**2026-10-26** update. Public release records bind artifact and qualification
 inputs; installed selections remain in operator-owned manifests. Source revision,
 public release, installed selection, native evidence, consumer behavior and
 physical acceptance are separate checkpoints.
 
-## Current checkpoint — 2026-10-25
+## Current checkpoint — 2026-10-26
+
+Agent Observer **0.7.0a11** adds bounded recovery across observed clock changes.
+Quiet and first-seen sessions no longer require new activity solely because
+the collector detected a clock discontinuity. The producer preserves uncertain
+proof boundaries, nonrenewing expiry, exact native/support joins and the existing
+API 4, snapshot 6, Service 4 and working-set 1 schemas. Mesh remains **0.1.0a25**.
+See the [a11 release](https://github.com/byebyebryan/agent-observer/releases/tag/v0.7.0a11),
+[artifact manifest](https://github.com/byebyebryan/agent-observer/releases/download/v0.7.0a11/observer-0.7.0a11.json)
+and [provenance](https://github.com/byebyebryan/agent-observer/releases/download/v0.7.0a11/provenance.json).
+
+The operator-owned selection at dotfiles commit `f5c4782` advances collectors,
+the public reader and working-set bridges to a11. Snap Default/Work and Starship
+have verified installed bytes, clean scoped managed status and complete cached
+coverage after deployment. Snap also passed rollback/reselection. Carbon is
+offline and its rollout remains pending. Full publishers retain Observer a5 /
+Mesh a20; the dashboard retains Observer a8 / Mesh a24. No reverse host route
+or experimental transport was enabled.
+
+The source/package regression proves recovery across a simulated clock step
+within one collector incarnation; a normal deployment restart is separate
+evidence. The offset range covers accepted mappings in that incarnation, not
+unobserved historical clock excursions. Live clock changes, new independent
+native classification and physical-device acceptance are not claimed. The
+[clock-recovery guide](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/working-set.md#clock-changes-and-recovery)
+defines the policy and limits.
+
+## Coverage checkpoint — 2026-10-25 (historical)
 
 Agent Observer **0.7.0a10** publishes working-set coverage reasons with the API 4,
 snapshot 6, Service 4 and working-set 1 contracts unchanged. Its paired Mesh
