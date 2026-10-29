@@ -49,9 +49,12 @@ class PublicationTests(unittest.TestCase):
     def test_missing_anchor_is_rejected(self):
         build.build(self.output)
         page = self.output / "index.html"
-        page.write_text(
-            page.read_text().replace('href="#projects"', 'href="#missing-anchor"')
-        )
+        original = page.read_text()
+        real_link = f'href="{build.BASE}#projects"'
+        self.assertIn(real_link, original, "anchor regression fixture no longer has the projects link")
+        mutated = original.replace(real_link, f'href="{build.BASE}#missing-anchor"', 1)
+        self.assertNotEqual(mutated, original, "anchor regression mutation did not change the page")
+        page.write_text(mutated)
         with self.assertRaisesRegex(ValueError, "anchor"):
             build.validate(self.output)
 
