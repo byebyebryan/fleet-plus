@@ -16,7 +16,9 @@ TUIs; the Tmux pair serves generic tmux workflows. Choose the pieces you need.
 [Compatibility and evidence](docs/compatibility.md)
 
 The reader needs existing working-set publishers/bridges and a private
-`terminal.toml` with explicit source bindings. Follow the owning
+`terminal.toml` with explicit source bindings. For your first source, use
+Observer's [source setup guide](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/source-setup.md).
+For an already hosted source, follow the owning
 [CLI setup](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/sessions-cli.md)
 and optional [dashboard setup](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/dashboard.md)
 guides for installation, then use:

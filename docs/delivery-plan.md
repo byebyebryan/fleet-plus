@@ -39,23 +39,28 @@ GitHub. The `terminal-dashboard` enhancement belongs to the terminal preview;
 `dashboard` continues to mean the RLCD consumer. Playback is explicit, with
 keyboard controls, reduced-motion handling and pause when hidden/offscreen.
 
-## Current follow-up: first-source onboarding
+## Public first-source onboarding
 
-A reader needs an existing working-set collector/publisher/bridge. The next
-pass closes the public setup gap from an already existing Codex home/daemon to
-a usable local CLI/dashboard, then one explicitly directional remote source.
-It must work without the maintainer's private chezmoi files.
+Observer's [source setup guide](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/source-setup.md)
+connects an existing owned Codex home/daemon to a private foreground collector
+and working-set bridge, then to the CLI/dashboard and one directional remote
+source. It includes profile/namespace resolution, private configuration,
+noninteractive SSH command selection and cleanup without private chezmoi files.
 
-Agent Observer owns the canonical procedure and any necessary public hosting
-example. Mesh owns authority/delivery contracts; Fleet Plus links to the owning
-instructions rather than copying package pins or a competing hosting recipe.
-Use explicit source identity, namespace, window and endpoint values. Reuse
-existing managed endpoints instead of silently starting another collector.
+The guide pins its reviewed launcher example to an immutable source revision.
+Its producer uses the published a11/Mesh a25 pair; the separate reader retains
+a14/Mesh a25. These are example/configuration additions, not a new runtime
+package or a managed-role upgrade. Existing hosted sources should be reused.
 
-Validate the procedure with isolated owned resources and exact published package
-inputs. Keep procedural/source/package evidence distinct from independent native
-accuracy, managed deployment and human/physical acceptance. Do not change fleet
-configuration, ordinary native sessions or managed pins to make onboarding pass.
+Observer owns that procedure and example. Mesh owns authority/delivery contracts;
+Fleet Plus links to those owners rather than copying package pins or maintaining
+a competing recipe. Isolated installed-wheel checks cover local publication,
+remote stdio through a fixture carrier, rejected bindings, unavailable sources
+and dashboard cleanup. This is procedural evidence, separate from native
+classification, real SSH authentication, sustained resource or physical proof.
+
+The next product focus is ordinary CLI/dashboard usability and concrete recovery
+defects. New producer or consumer requirements retain their owning acceptance.
 
 ## Stable project boundaries
 

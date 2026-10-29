@@ -6,18 +6,30 @@ tools for host access, native TUI entry and generic tmux workflows.
 
 ## Set up the terminal reader
 
-Requires Linux and Python 3.11+. Follow the owner's
+Requires Linux and Python 3.11+.
+
+### Host a source or reuse one
+
+**The reader needs existing working-set publishers/bridges.** Installing a reader
+does not host a collector, start a provider or create a source. If your source is
+already hosted, reuse its exact endpoint and continue with reader installation.
+
+For a first source, follow Observer's [source setup guide](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/source-setup.md).
+It connects an existing owned Codex home/daemon to a separately hosted foreground
+collector and working-set bridge, then explains one directional remote source.
+It uses your own explicit configuration rather than the maintainer's chezmoi files.
+A working-set bridge socket is distinct from the collector's Service 4 socket.
+
+### Install the reader
+
+Follow the owner's
 [sessions CLI guide](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/sessions-cli.md#prerequisites)
 to install the published reader pair in an isolated environment. For the
 persistent TUI, follow the [dashboard guide](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/dashboard.md)
 with its optional dependencies. Those guides own the current artifact hashes
 and dependency pins.
 
-**The reader needs existing working-set publishers/bridges.** Installing a reader
-does not host a collector, start a provider or create a source. Check the owner's
-[working-set prerequisites](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/working-set.md#bounded-inspection)
-and arrange source hosting before continuing with reader setup.
-A working-set bridge socket is distinct from the collector's Service 4 socket.
+### Configure sources once
 
 Next, [configure sources once](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/sessions-cli.md#configure-sources-once)
 in your private `terminal.toml`. Each entry binds an existing host/home, Mesh

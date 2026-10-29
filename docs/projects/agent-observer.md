@@ -38,6 +38,13 @@ your filesystem or search conversation content.
 
 ## Set up your sources once
 
+**Existing working-set publishers/bridges are a prerequisite.** Reuse an existing
+source's exact endpoint. To host your first source, follow the canonical
+[source setup guide](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/source-setup.md)
+from an existing owned Codex home/daemon through its separate collector and
+working-set bridge. It also covers one directional remote source.
+The collector's Service 4 socket is a different endpoint from the Mesh bridge.
+
 Requires Linux and Python 3.11+. Follow the
 [sessions CLI setup](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/sessions-cli.md)
 for the published reader pair and private `terminal.toml`. The
@@ -45,11 +52,8 @@ for the published reader pair and private `terminal.toml`. The
 adds optional dependencies and reuses the same configuration. Owner guides
 retain the current hashes and installation pins.
 
-**Existing working-set publishers/bridges are a prerequisite.** Check the
-[working-set prerequisites](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/working-set.md#bounded-inspection)
-and arrange source hosting before setting up a reader.
-Use their exact host/home, source, namespace and route/socket in your terminal
-configuration. The collector's Service 4 socket is a different endpoint.
+Use the source's exact host/home, source ID, namespace and route/socket in your terminal
+configuration.
 
 Check configuration without connecting, then inspect actual source health:
 
