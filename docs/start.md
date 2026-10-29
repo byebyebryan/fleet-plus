@@ -1,80 +1,87 @@
-# Choose the pieces you need
+# Keep your sessions in view
 
-Fleet Plus brings together independently useful projects. Start with the workflow
-you want, then follow the owning project's setup instructions.
+Start with Agent Observer's terminal reader for quick checks, session
+investigation and a persistent dashboard. Fleet Plus also includes independent
+tools for host access, native TUI entry and generic tmux workflows.
 
-| Your goal | Start with | Add when needed |
-| --- | --- | --- |
-| Read Codex session state locally | Agent Observer core/CLI | An explicitly hosted local service for cached clients |
-| Build a dashboard or diagnostic utility | Agent Observer public reads | Mesh for cross-host delivery |
-| Pick and open an SSH destination | SSH Plus and its Mesh authority | Your existing terminal and SSH configuration |
-| Open/focus native Codex or Claude TUIs | Agent Plus | SSH Plus and the host helper for remote entry |
-| Browse and manage tmux sessions | Tmux Plus and its exact Tmux Observer counterpart | Mesh/SSH for configured remote views |
+## Set up the terminal reader
 
-## Start with Agent Observer
+Requires Linux and Python 3.11+. Follow the owner's
+[sessions CLI guide](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/sessions-cli.md#prerequisites)
+to install the published reader pair in an isolated environment. For the
+persistent TUI, follow the [dashboard guide](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/dashboard.md)
+with its optional dependencies. Those guides own the current artifact hashes
+and dependency pins.
 
-The simplest complete path is a local read on the machine that already runs your
-Codex daemon. No fleet setup is required. Follow the
-[first local read recipe](https://github.com/byebyebryan/agent-observer/blob/main/docs/getting-started.md)
-to install the published, hash-pinned 0.7.0a11 core in its own Python environment.
+**The reader needs existing working-set publishers/bridges.** Installing a reader
+does not host a collector, start a provider or create a source. Check the owner's
+[working-set prerequisites](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/working-set.md#bounded-inspection)
+and arrange source hosting before continuing with reader setup.
+A working-set bridge socket is distinct from the collector's Service 4 socket.
 
-Once that environment is active, choose the source and read:
+Next, [configure sources once](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/sessions-cli.md#configure-sources-once)
+in your private `terminal.toml`. Each entry binds an existing host/home, Mesh
+source, namespace and route/socket. Use the owning source's values; a friendly
+home label cannot establish its identity. The file must be owned by your user,
+regular, without a symlink, and mode 0600.
+
+Check the configuration, then source health:
 
 ```sh
-agent-observer api
-agent-observer list --host-scope workstation --provider codex \
-  --codex-home "${CODEX_HOME:-$HOME/.codex}"
+agent-observer sessions sources --configured
+agent-observer sessions sources
 ```
 
-Use your own logical host label and the Codex home you intend to inspect. `api`
-reports API 4 / snapshot-watch 6 without contacting a provider. `list` performs
-the explicit native read and shows host, provider, phase, runtime, activity age,
-turn/update information, identity and title. The linked recipe explains the table
-and how to inspect coverage when rows are missing or unknown.
+The first command checks configuration without connecting. The second reads the
+selected sources. Setup errors, unavailable sources and partial coverage remain
+explicit, including when no sessions match.
 
-For multiple local readers, continue with the
-[current Service 4 recipe](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/local-service.md).
-It explains an existing endpoint or a separately owned cache, with exact commands
-for reads, watches and shutdown. Local core/service use remains Mesh-free.
+## Check, investigate, keep watch
 
-For working-set readers, use the current [working-set guide](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/working-set.md)
-for membership, coverage and bounded read semantics.
+| What you need | Command |
+| --- | --- |
+| A quick overview, up to ten rows | `agent-observer` |
+| All matching sessions and full IDs | `agent-observer sessions list` |
+| Search admitted session metadata | `agent-observer sessions list --query renderer` |
+| Inspect an exact session | `agent-observer sessions show FULL_THREAD_ID --host HOST --home HOME` |
+| Inspect source health | `agent-observer sessions sources` |
+| Versioned output for scripts | `agent-observer sessions list --format json` |
+| A dashboard that stays open | `agent-observer dashboard` |
 
-For a new utility, use the [bounded public-read example](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/read-utilities.md).
-It is a developer example using public facades, with explicit endpoint/identity
-inputs and a bounded lifetime. It does not install a new dashboard or daemon.
+The dashboard reuses the CLI's source configuration. Search and filters narrow
+the display while source health stays visible. Press `?` for keys and `q` to quit.
+The JSON output is terminal interface 1; human tables are for reading.
 
-## Add machines deliberately
+For another host or home, follow [more hosts and homes](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/sessions-cli.md#more-hosts-and-homes).
+Use existing directional routes and exact source bindings. A remote read grants
+no reverse access. The [compatibility guide](compatibility.md) keeps reader,
+producer and other consumer selections separate.
 
-For fleet reads, configure logical hosts/routes through the supported Host Mesh
-authority and install the matching publisher on each source host. Check the
-[compatibility guide](compatibility.md) and the owner's networking instructions.
-Reachability, configured membership and current source evidence are distinct.
-Follow the [directional example](architecture.md#directional-host-access) before
-assuming one machine can read another.
+## Other ways into Fleet Plus
 
-## Open native agent tools
+| Your goal | Start with |
+| --- | --- |
+| Pick and open an SSH destination | [SSH Plus](projects/ssh-plus.md) and its Mesh host authority |
+| Open/focus native Codex or Claude TUIs | [Agent Plus](projects/agent-plus.md) |
+| Browse and manage generic tmux sessions | [Tmux Plus](projects/tmux-plus.md) and its exact Tmux Observer counterpart |
+| Inspect the owning local runtime | Observer's [first local read](https://github.com/byebyebryan/agent-observer/blob/main/docs/getting-started.md) |
+| Build a read-only utility | Observer's [public-read example](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/read-utilities.md) |
 
-[Agent Plus](projects/agent-plus.md) discovers Codex/Claude environments and opens
-or focuses its registered native TUI windows. The supported desktop is Linux,
-Niri and dedicated Kitty windows. Codex and Claude manage conversations inside
-those windows. Agent Plus needs neither Agent Observer nor Tmux.
+Mesh and SSH Plus are independently useful. Agent Plus uses Host Mesh for
+remote native entry and needs neither Observer nor Tmux. Native Codex/Claude
+managers own conversations inside their windows. Tmux keeps its separate,
+explicit session actions.
 
-For remote entry, SSH Plus supplies configured routes and the Agent Plus host
-helper runs on the provider's host. Each native home/environment retains its
-own identity; a Work label is not a cross-host or shared-history shortcut.
-
-## Use tmux independently
-
-[Tmux Plus](projects/tmux-plus.md) remains a generic tmux picker and CLI. Install
-the exact Tmux Observer payload it pins: version strings alone do not satisfy
-its complete module/hash guard. Tmux observation, explicit refresh, attach/focus
-and guarded lifecycle actions have separate responsibilities.
+The diagnostic local core and Service 4 remain Mesh-free. The terminal sessions
+reader uses the existing working-set Mesh bridges; these are separate read paths.
+The [architecture guide](architecture.md) explains their responsibilities.
 
 ## Existing managed installations
 
-Use your deployment owner to update an existing managed setup. This site's
-examples do not replace per-role manifests or install all six projects together.
-The maintainer uses a private, operator-managed chezmoi setup with explicit
-artifact pins and scoped application. Public release, installed selection,
-native behavior and device acceptance remain separate evidence.
+Use your deployment owner to update a managed setup. This site's commands do not
+replace role manifests or install all six projects together. The maintainer uses
+a private operator-managed chezmoi setup; public onboarding needs only the
+documented owner interfaces and your own explicit configuration.
+
+Public release, installed selection, native behavior, resource qualification and
+physical-device acceptance remain separate evidence.

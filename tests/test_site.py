@@ -24,6 +24,15 @@ class PublicationTests(unittest.TestCase):
         result = build.build(self.output)
         self.assertEqual(result["pages"], 10)
         self.assertGreater(result["local_links"], 100)
+        home = (self.output / "index.html").read_text()
+        self.assertIn('content="https://dev.byebyebryan.com/fleet-plus/assets/observer-terminal-wide.png"', home)
+        self.assertIn('content="1680"', home)
+        self.assertIn('srcset="/fleet-plus/assets/observer-terminal-compact.png"', home)
+        self.assertIn('preload="none"', home)
+        self.assertIn('data-terminal-toggle', home)
+        observer = (self.output / "projects/agent-observer/index.html").read_text()
+        self.assertIn('content="https://dev.byebyebryan.com/fleet-plus/assets/observer-terminal-wide.png"', observer)
+        self.assertIn('>Open compact layout</a>', observer)
         self.assertEqual(
             build.link_for_source("docs/start.md", "projects/agent-observer.md"),
             "/fleet-plus/projects/agent-observer/",
@@ -71,8 +80,22 @@ class PublicationTests(unittest.TestCase):
         self.assertIn("Optional fleet delivery", rendered)
         self.assertIn("Tower → Laptop", MarkdownIt().render(architecture))
         self.assertIn('src="../../assets/agent-plus.png"', MarkdownIt().render(agent))
+        self.assertIn("<!-- fleet-plus:terminal-dashboard -->", observer)
+        self.assertIn("../../assets/observer-terminal-wide.png", observer)
+        self.assertIn("../../assets/observer-terminal-compact.png", observer)
+        self.assertIn("../../assets/observer-terminal-demo.mp4", observer)
+        self.assertIn("Released a14 terminal application rendered from fictional cached sources.", observer)
         for text in (observer, architecture, agent):
             self.assertNotIn("{{", text)
+
+    def test_terminal_dashboard_enhancement_keeps_rlcd_dashboard_separate(self):
+        rendered = build.markdown("docs/projects/agent-observer.md")
+        self.assertIn('data-terminal-showcase', rendered)
+        self.assertIn('srcset="/fleet-plus/assets/observer-terminal-compact.png"', rendered)
+        self.assertIn('src="/fleet-plus/assets/observer-terminal-demo.mp4"', rendered)
+        self.assertIn('preload="none"', rendered)
+        self.assertIn('id="observer-dashboard"', rendered)
+        self.assertIn('/fleet-plus/assets/dashboard.gif', rendered)
 
     def test_invalid_enhancements_fail_instead_of_hiding_broken_markdown(self):
         cases = [

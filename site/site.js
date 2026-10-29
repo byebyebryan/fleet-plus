@@ -56,3 +56,56 @@ document.querySelectorAll("[data-media-toggle]").forEach((button) => {
   document.addEventListener("visibilitychange", () => { if (document.hidden) stop(); });
   window.matchMedia("(prefers-reduced-motion: reduce)").addEventListener("change", stop);
 });
+
+document.querySelectorAll("[data-terminal-showcase]").forEach((root) => {
+  const poster = root.querySelector("[data-terminal-poster]");
+  const image = poster?.querySelector("img");
+  const video = root.querySelector("[data-terminal-video]");
+  const button = root.querySelector("[data-terminal-toggle]");
+  if (!poster || !image || !video || !button) return;
+
+  const compact = window.matchMedia("(max-width: 650px)");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const updateAlt = () => {
+    image.alt = compact.matches ? image.dataset.compactAlt : image.dataset.wideAlt;
+  };
+  const pause = () => {
+    if (!video.paused) video.pause();
+  };
+
+  updateAlt();
+  compact.addEventListener("change", updateAlt);
+  button.hidden = false;
+  button.addEventListener("click", async () => {
+    if (video.hidden) {
+      video.hidden = false;
+      poster.hidden = true;
+      button.textContent = "Show terminal still";
+      button.setAttribute("aria-expanded", "true");
+      if (!reducedMotion.matches) {
+        try {
+          await video.play();
+        } catch {
+          // Keep native controls available if media decoding is unavailable.
+        }
+      }
+      return;
+    }
+    pause();
+    video.hidden = true;
+    poster.hidden = false;
+    button.textContent = "Play terminal demo";
+    button.setAttribute("aria-expanded", "false");
+  });
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) pause();
+  });
+  reducedMotion.addEventListener("change", (event) => {
+    if (event.matches) pause();
+  });
+  const visibility = new IntersectionObserver((entries) => {
+    if (entries.some((entry) => !entry.isIntersecting)) pause();
+  });
+  visibility.observe(root);
+});

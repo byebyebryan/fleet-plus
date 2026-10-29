@@ -5,19 +5,22 @@
       "slug": "agent-observer",
       "name": "Agent Observer",
       "repo": "agent-observer",
-      "role": "Observation",
-      "description": "Read-only Codex session observation for dashboards, diagnostics and agent utilities.",
+      "role": "Terminal observation",
+      "description": "Terminal CLI and dashboard for read-only Codex session observation, locally and across configured hosts.",
       "topics": [
         "codex",
+        "dashboard",
         "developer-tools",
         "fleet-plus",
         "linux",
         "monitoring",
         "observability",
-        "python"
+        "python",
+        "terminal",
+        "tui"
       ],
-      "docs": "https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/read-utilities.md",
-      "release": "v0.7.0a11",
+      "docs": "https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/sessions-cli.md",
+      "release": "v0.7.0a14",
       "featured": true
     },
     {
@@ -78,7 +81,7 @@
         "tui"
       ],
       "docs": "https://github.com/byebyebryan/rofi-agent-plus/blob/main/README.md",
-      "release": "v0.15.0a15",
+      "release": "v0.15.0a17",
       "featured": false
     },
     {

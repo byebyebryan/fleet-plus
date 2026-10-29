@@ -26,7 +26,7 @@ PROJECTS = CATALOG["projects"]
 GUIDES = {
     "start/": (
         "docs/start.md",
-        "Choose the pieces your workflow needs, from local Codex reads to SSH access, native entry and generic tmux.",
+        "Set up Agent Observer's terminal reader, inspect configured sources and keep a dashboard open; find independent host access, native entry and tmux tools.",
     ),
     "architecture/": (
         "docs/architecture.md",
@@ -49,6 +49,9 @@ ASSETS = {
     "dashboard.png",
     "dashboard.gif",
     "agent-plus.png",
+    "observer-terminal-wide.png",
+    "observer-terminal-compact.png",
+    "observer-terminal-demo.mp4",
     "provenance.json",
     "LICENSES.txt",
     "relationships.svg",
@@ -96,7 +99,7 @@ def link_for_source(source: str, target: str) -> str:
 
 def prepare_enhancements(text: str, source: str) -> tuple[str, dict[str, str]]:
     """Replace marked, validated Markdown fallbacks only during the site build."""
-    names = {"dashboard", "read-path", "routes", "agent-picker"}
+    names = {"dashboard", "terminal-dashboard", "read-path", "routes", "agent-picker"}
     slots: dict[str, str] = {}
     seen: set[str] = set()
     pattern = re.compile(
@@ -184,6 +187,7 @@ def markdown(source: str) -> str:
         "routes": (ROOT / "site/routes.html").read_text(),
         "read-path": (ROOT / "site/read-path.html").read_text(),
         "dashboard": dashboard("observer-dashboard"),
+        "terminal-dashboard": terminal_dashboard("observer-terminal"),
         "agent-picker": f'<figure><img class="product-image" src="{BASE}assets/agent-plus.png" alt="Agent Plus Rofi picker with local and remote example environments and native TUI windows" loading="lazy"><figcaption>Actual Rofi rendering with sample data and a preview theme. No live sessions are shown; your Rofi theme controls its appearance.</figcaption></figure>',
     }
     for slot, name in enhancements.items():
@@ -201,30 +205,60 @@ def dashboard(identity: str) -> str:
 <figcaption>Production dashboard renderer with fictional conversations and virtual time. This is a UI preview, not physical panel footage. <a href="{BASE}assets/provenance.json">Media provenance</a>.</figcaption></figure>'''
 
 
+def terminal_dashboard(identity: str) -> str:
+    wide_alt = "Agent Observer terminal dashboard overview showing fictional Codex sessions across configured hosts, with source health and repository context."
+    compact_alt = "Compact Agent Observer terminal dashboard showing the same fictional Codex sessions and source health in a narrow terminal."
+    return f'''<figure class="terminal-showcase" data-terminal-showcase>
+<div class="terminal-media">
+<picture data-terminal-poster>
+<source media="(max-width: 650px)" srcset="{BASE}assets/observer-terminal-compact.png" width="720" height="480">
+<img src="{BASE}assets/observer-terminal-wide.png" data-wide-alt="{escape(wide_alt, quote=True)}" data-compact-alt="{escape(compact_alt, quote=True)}" width="1680" height="576" alt="{escape(wide_alt, quote=True)}" loading="lazy">
+</picture>
+<video id="{identity}-video" data-terminal-video controls playsinline preload="none" poster="{BASE}assets/observer-terminal-wide.png" width="1680" height="768" aria-label="Released Agent Observer terminal demo" aria-describedby="{identity}-caption" hidden>
+<source src="{BASE}assets/observer-terminal-demo.mp4" type="video/mp4">
+<a href="{BASE}assets/observer-terminal-demo.mp4">Open the terminal demo video</a>
+</video>
+</div>
+<button class="button secondary terminal-demo-toggle" type="button" data-terminal-toggle aria-expanded="false" aria-controls="{identity}-video" hidden>Play terminal demo</button>
+<figcaption id="{identity}-caption"><p>Released a14 terminal application rendered from fictional cached sources.</p>
+<div class="terminal-links"><a href="{BASE}assets/observer-terminal-wide.png">Open full-size dashboard</a><a href="{BASE}assets/observer-terminal-compact.png">Open compact layout</a><a href="{BASE}assets/observer-terminal-demo.mp4">Watch the terminal demo</a><a href="{BASE}assets/provenance.json">Media provenance</a></div></figcaption>
+</figure>'''
+
+
 def homepage() -> str:
     projects = "".join(
         f'''<article class="project-row"><p class="role">{escape(p["role"])}</p><h3><a href="{BASE}projects/{p["slug"]}/">{escape(p["name"])}</a></h3><p>{escape(p["description"])}</p><a class="small-link" href="https://github.com/byebyebryan/{p["repo"]}">Source on GitHub ↗</a></article>'''
         for p in PROJECTS
     )
-    return f'''<section class="intro"><p class="eyebrow">Observation · host access · desktop tools</p>
-<h1>Your machines.<br>Your native tools.<br>A clearer view.</h1>
-<p class="lede">Fleet Plus brings together six small projects for observing Codex, reaching hosts and opening useful native tools. Choose the pieces that fit your workflow.</p>
-<div class="actions"><a class="button" href="{BASE}start/">Find your starting point</a><a class="button secondary" href="#projects">Explore the projects</a></div></section>
-<section class="feature" aria-labelledby="observer-feature"><div class="text"><p class="eyebrow">Featured project · Agent Observer</p>
-<h2 id="observer-feature">See useful agent state.<br>Across machines.</h2>
-<p>Read-only Codex observations for dashboards, diagnostics and the next utility you want to build. Native managers keep ownership of the work.</p>
-<p>Session identity, runtime and activity, with coverage and freshness kept explicit.</p><a class="button" href="{BASE}projects/agent-observer/">Explore Agent Observer</a></div>{dashboard("hero-dashboard")}</section>
-<section class="section" aria-labelledby="workflow-title"><div class="section-heading"><p class="eyebrow">Other ways in</p><h2 id="workflow-title">Start with the job at hand.</h2><p>Related tools, independently useful. Opening a native TUI does not require an observation stack.</p></div>
-<div class="cards"><article class="card"><span class="number">01 / HOST ACCESS</span><h3>Reach the right machine.</h3><p>Pick SSH destinations and share explicit host routes. Keep directional access intentional.</p><a href="{BASE}projects/ssh-plus/">SSH Plus &amp; Mesh →</a></article>
-<article class="card"><span class="number">02 / NATIVE ENTRY</span><h3>Open your native agent tools.</h3><p>Find Codex and Claude environments. Open or focus dedicated TUI windows across configured hosts.</p><a href="{BASE}projects/agent-plus/">Agent Plus →</a></article>
-<article class="card"><span class="number">03 / TMUX</span><h3>Keep tmux useful.</h3><p>Browse sessions, attach to useful context and use explicit guarded actions through independent tmux tooling.</p><a href="{BASE}projects/tmux-plus/">The Tmux tools →</a></article></div></section>
+    return f'''<section class="intro"><p class="eyebrow">Fleet Plus · featuring Agent Observer</p>
+<h1>Keep your Codex sessions in view.</h1>
+<p class="lede">Check what is running, investigate a session, or keep a terminal dashboard open—locally and across machines. Agent Observer reads configured sources while native Codex owns the conversations.</p>
+<div class="actions"><a class="button" href="{BASE}start/">Set up the terminal reader</a><a class="button secondary" href="{BASE}projects/agent-observer/">Explore Agent Observer</a></div></section>
+<section class="terminal-feature" aria-labelledby="observer-feature"><p class="eyebrow">Agent Observer · terminal CLI and dashboard</p>
+<h2 id="observer-feature">A quick check. A closer look. A view that stays open.</h2>
+<p>Run <code>agent-observer</code> for a quick overview, use <code>sessions</code> commands for investigation, and open <code>dashboard</code> to keep watching. Session state and source health stay visible.</p>
+<p class="source-note">Requires existing configured sources. <a href="{BASE}start/">Start with the setup guide.</a></p>
+{terminal_dashboard("home-terminal")}</section>
+<section class="section" aria-labelledby="workflow-title"><div class="section-heading"><p class="eyebrow">Fleet Plus</p><h2 id="workflow-title">Six independent projects.</h2><p>Fleet Plus brings together six independently useful projects: Codex observation, host access, native TUI entry and generic tmux tools. Choose the pieces your workflow needs.</p></div>
+<div class="cards"><article class="card"><span class="number">01 / HOST ACCESS</span><h3>Reach the right machine.</h3><p>Pick SSH destinations and reuse configured host routes. Mesh and SSH Plus work independently of Observer.</p><a href="{BASE}projects/ssh-plus/">SSH Plus &amp; Mesh →</a></article>
+<article class="card"><span class="number">02 / NATIVE ENTRY</span><h3>Open your native agent tools.</h3><p>Find Codex and Claude environments, then open or focus dedicated native TUI windows. Agent Plus needs neither Observer nor Tmux.</p><a href="{BASE}projects/agent-plus/">Agent Plus →</a></article>
+<article class="card"><span class="number">03 / TMUX</span><h3>Keep tmux useful.</h3><p>Browse generic tmux sessions, attach to useful context and perform explicit guarded actions.</p><a href="{BASE}projects/tmux-plus/">The Tmux tools →</a></article></div></section>
 <section class="section" aria-labelledby="relationships-title"><div class="section-heading"><p class="eyebrow">How it fits</p><h2 id="relationships-title">Clear responsibilities.<br>Useful connections.</h2><p>Observer owns native facts. Mesh owns host authority and delivery. SSH Plus supplies access. Each utility owns its own presentation and intent.</p><a href="{BASE}architecture/">Explore the relationships and directional routes →</a></div></section>
 <section class="section" id="projects" aria-labelledby="projects-title"><p class="eyebrow">The collection</p><h2 id="projects-title">Six projects. Their own paths.</h2><div class="project-grid">{projects}</div></section>
 <section class="related section" aria-labelledby="related-title"><h2 id="related-title">Around the native workflow.</h2><p><a href="https://dev.byebyebryan.com/codex-plus/">Codex Plus</a> adds workers, watches, peer coordination and browser reports. <a href="https://github.com/byebyebryan/esp32-rlcd/tree/main/projects/agent-dashboard">The RLCD dashboard</a> turns observations into a desk display. Both retain their own implementation and delivery owners.</p><p><a href="{BASE}compatibility/">Read the dated compatibility and acceptance guide →</a></p></section>'''
 
 
 def shell(
-    route: str, title: str, description: str, body: str, source: str | None = None
+    route: str,
+    title: str,
+    description: str,
+    body: str,
+    source: str | None = None,
+    *,
+    social_image: str = "assets/dashboard.png",
+    social_image_alt: str = "Dashboard UI renderer with fictional conversations; not physical footage",
+    social_image_width: int = 400,
+    social_image_height: int = 300,
 ) -> str:
     canonical = SITE + route
     navigation = [
@@ -248,7 +282,7 @@ def shell(
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{escape(title)} — Fleet Plus</title><meta name="description" content="{escape(description, quote=True)}">
-<link rel="canonical" href="{canonical}"><meta property="og:type" content="website"><meta property="og:site_name" content="Fleet Plus"><meta property="og:title" content="{escape(title, quote=True)} — Fleet Plus"><meta property="og:description" content="{escape(description, quote=True)}"><meta property="og:url" content="{canonical}"><meta property="og:image" content="{SITE}assets/dashboard.png"><meta property="og:image:alt" content="Dashboard UI renderer with fictional conversations; not physical footage"><meta name="theme-color" content="#f6f5ef">
+<link rel="canonical" href="{canonical}"><meta property="og:type" content="website"><meta property="og:site_name" content="Fleet Plus"><meta property="og:title" content="{escape(title, quote=True)} — Fleet Plus"><meta property="og:description" content="{escape(description, quote=True)}"><meta property="og:url" content="{canonical}"><meta property="og:image" content="{SITE}{social_image}"><meta property="og:image:alt" content="{escape(social_image_alt, quote=True)}"><meta property="og:image:width" content="{social_image_width}"><meta property="og:image:height" content="{social_image_height}"><meta name="theme-color" content="#f6f5ef">
 <link rel="stylesheet" href="{BASE}assets/style.css"><script defer src="{BASE}assets/site.js"></script></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-header"><div class="wrap header-row"><a class="brand" href="{BASE}"><span class="brand-mark" aria-hidden="true"></span>Fleet Plus</a><nav aria-label="Main navigation">{nav}</nav></div></header>
 <main class="wrap" id="main" tabindex="-1">{body}</main>
@@ -270,9 +304,13 @@ class Page(HTMLParser):
         self.counts[tag] += 1
         if attrs.get("id"):
             self.ids.append(attrs["id"])
-        for attr in ("href", "src"):
+        for attr in ("href", "src", "poster"):
             if attrs.get(attr):
                 self.links.append(attrs[attr])
+        for candidate in attrs.get("srcset", "").split(","):
+            source = candidate.strip().split(maxsplit=1)[0] if candidate.strip() else ""
+            if source:
+                self.links.append(source)
         if tag == "link" and attrs.get("rel") == "canonical":
             self.canonicals.append(attrs.get("href"))
         if tag == "meta" and attrs.get("name") == "description":
@@ -355,9 +393,13 @@ def build(output: Path) -> dict:
     (output / "index.html").write_text(
         shell(
             "",
-            "Observation, host access and desktop tools",
-            "Multi-host observation, SSH access and desktop tools, featuring Agent Observer and independent native workflows.",
+            "Keep your Codex sessions in view.",
+            "Keep your Codex sessions in view with Agent Observer's terminal CLI and dashboard, alongside independent host access, native TUI entry and tmux tools.",
             homepage(),
+            social_image="assets/observer-terminal-wide.png",
+            social_image_alt="Agent Observer's released terminal dashboard with fictional cached Codex sessions; a native rendering preview.",
+            social_image_width=1680,
+            social_image_height=576,
         )
     )
     for route, (source, description) in GUIDES.items():
@@ -365,7 +407,17 @@ def build(output: Path) -> dict:
         title = (ROOT / source).read_text().splitlines()[0].removeprefix("# ")
         target = output / route / "index.html"
         target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_text(shell(route, title, description, body, source))
+        social = (
+            {
+                "social_image": "assets/observer-terminal-wide.png",
+                "social_image_alt": "Agent Observer's released terminal dashboard with fictional cached Codex sessions; a native rendering preview.",
+                "social_image_width": 1680,
+                "social_image_height": 576,
+            }
+            if route == "projects/agent-observer/"
+            else {}
+        )
+        target.write_text(shell(route, title, description, body, source, **social))
     (output / ".nojekyll").write_text("")
     urls = [SITE, *(SITE + route for route in GUIDES)]
     (output / "sitemap.xml").write_text(

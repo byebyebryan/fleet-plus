@@ -23,6 +23,236 @@
       "source_path": "docs/assets/picker.png",
       "treatment": "Unmodified actual Rofi rendering with sample environments/windows and a preview theme; no live sessions.",
       "sha256": "7feaee0de386b96d89d017b3e793e77ba3dc25aa8d36f3e5f631d57b2b3f69e7"
+    },
+    {
+      "file": "observer-terminal-wide.png",
+      "source_repository": "https://github.com/byebyebryan/agent-observer",
+      "source_revision": "dcbd69d9debed39eaff3f898815dfb52c6711174",
+      "source_path": "agent_observer/terminal/dashboard.py",
+      "treatment": "Released Agent Observer 0.7.0a14 dashboard rendering from fictional cached sources; not a live fleet or physical terminal recording. One synthetic source is deliberately partial to demonstrate visible source health.",
+      "sha256": "ddd1641968f8336886291c442d360d034e63f7ba851d37392702aead7567d5a7",
+      "capture": {
+        "release_tag": "v0.7.0a14",
+        "release_tag_revision": "7dbcd611f7b0ecfbebf7b2e8053963fb25915999",
+        "observer_wheel_sha256": "46a1158023023b60d9b839184a45f7b7eeb21b04dce67aad808fa8277522518f",
+        "mesh_version": "0.1.0a25",
+        "mesh_wheel_sha256": "0055e42162827744add4f817d3918cfc20471e5ec5a3cdf0840d254f76f5dc3a",
+        "textual_version": "8.2.8",
+        "vt_renderer": "pyte 0.8.2",
+        "requirements_file": "scripts/terminal-capture-requirements.txt",
+        "requirements_sha256": "f156fb8d52d94447667c397880a4636698d9faf8de8efb702dfc7629bcbd7d21",
+        "pinned_dependencies": {
+          "attrs": "26.1.0",
+          "jsonschema": "4.26.0",
+          "jsonschema-specifications": "2025.9.1",
+          "linkify-it-py": "2.2.0",
+          "markdown-it-py": "4.2.0",
+          "mdit-py-plugins": "0.6.1",
+          "mdurl": "0.1.2",
+          "platformdirs": "4.13.5",
+          "pygments": "2.21.0",
+          "pyte": "0.8.2",
+          "referencing": "0.37.0",
+          "rich": "15.0.0",
+          "rpds-py": "2026.9.1",
+          "textual": "8.2.8",
+          "typing-extensions": "4.16.0",
+          "wcwidth": "0.2.13"
+        },
+        "capture_recipe": [
+          {
+            "path": "scripts/capture-terminal-media.sh",
+            "sha256": "f568ca7a9803873212a4c3b68e8b59a6a1696c5aee8942d8f687eac696d50b38"
+          },
+          {
+            "path": "scripts/capture_terminal_media.py",
+            "sha256": "b2eb5efd8de13f6d91df0f421e2c86f16a41d2cf784b5890e3c1d3d97cd05c4d"
+          },
+          {
+            "path": "scripts/terminal_colors.py",
+            "sha256": "f01466f65fcc538009f81c718e0c23b492630ee888d45ef07a6bef75869c59a9"
+          },
+          {
+            "path": "tests/test_terminal_colors.py",
+            "sha256": "ce9ff6cc09286ec85ba134966aa00436028de877273c0dd9a26db0cc0d5d84ef"
+          }
+        ],
+        "fixture": "fixtures/terminal-dashboard-scenario.json",
+        "fixture_sha256": "d4c346a0551b361e5ed000e85f7a16216e7b6e03a5b339189f3421c5d370525a",
+        "method": "released agent-observer dashboard in a draining Linux PTY; pyte 0.8.2 VT cell parser; SVG text render via librsvg; no UI monkeypatch or redraw",
+        "font": "Noto Sans Mono Regular (sha256 65b5e2b2c4a1fba9ae8be1f026cb35b03dcb8886d9b2a4147054fde12f7e767d)",
+        "rasterizer": "rsvg-convert version 2.63.4",
+        "geometry": "140x24",
+        "cell_size_pixels": {
+          "width": 12,
+          "height": 24,
+          "fontSize": 20
+        },
+        "terminal_environment": {
+          "TERM": "xterm-256color",
+          "COLORTERM": "truecolor"
+        },
+        "transforms": [
+          "VT screen cells rendered to SVG at the matching terminal grid without cropping or adding UI fields",
+          "SVG rasterized to lossless PNG with librsvg"
+        ],
+        "color_mode": "--color always",
+        "working_set_window_hours": 72
+      }
+    },
+    {
+      "file": "observer-terminal-compact.png",
+      "source_repository": "https://github.com/byebyebryan/agent-observer",
+      "source_revision": "dcbd69d9debed39eaff3f898815dfb52c6711174",
+      "source_path": "agent_observer/terminal/dashboard.py",
+      "treatment": "Released Agent Observer 0.7.0a14 dashboard rendering from fictional cached sources; not a live fleet or physical terminal recording. One synthetic source is deliberately partial to demonstrate visible source health.",
+      "sha256": "16c89180bb495b637735544357e34489c6d797ef8c293b8dc3d98f8638de3659",
+      "capture": {
+        "release_tag": "v0.7.0a14",
+        "release_tag_revision": "7dbcd611f7b0ecfbebf7b2e8053963fb25915999",
+        "observer_wheel_sha256": "46a1158023023b60d9b839184a45f7b7eeb21b04dce67aad808fa8277522518f",
+        "mesh_version": "0.1.0a25",
+        "mesh_wheel_sha256": "0055e42162827744add4f817d3918cfc20471e5ec5a3cdf0840d254f76f5dc3a",
+        "textual_version": "8.2.8",
+        "vt_renderer": "pyte 0.8.2",
+        "requirements_file": "scripts/terminal-capture-requirements.txt",
+        "requirements_sha256": "f156fb8d52d94447667c397880a4636698d9faf8de8efb702dfc7629bcbd7d21",
+        "pinned_dependencies": {
+          "attrs": "26.1.0",
+          "jsonschema": "4.26.0",
+          "jsonschema-specifications": "2025.9.1",
+          "linkify-it-py": "2.2.0",
+          "markdown-it-py": "4.2.0",
+          "mdit-py-plugins": "0.6.1",
+          "mdurl": "0.1.2",
+          "platformdirs": "4.13.5",
+          "pygments": "2.21.0",
+          "pyte": "0.8.2",
+          "referencing": "0.37.0",
+          "rich": "15.0.0",
+          "rpds-py": "2026.9.1",
+          "textual": "8.2.8",
+          "typing-extensions": "4.16.0",
+          "wcwidth": "0.2.13"
+        },
+        "capture_recipe": [
+          {
+            "path": "scripts/capture-terminal-media.sh",
+            "sha256": "f568ca7a9803873212a4c3b68e8b59a6a1696c5aee8942d8f687eac696d50b38"
+          },
+          {
+            "path": "scripts/capture_terminal_media.py",
+            "sha256": "b2eb5efd8de13f6d91df0f421e2c86f16a41d2cf784b5890e3c1d3d97cd05c4d"
+          },
+          {
+            "path": "scripts/terminal_colors.py",
+            "sha256": "f01466f65fcc538009f81c718e0c23b492630ee888d45ef07a6bef75869c59a9"
+          },
+          {
+            "path": "tests/test_terminal_colors.py",
+            "sha256": "ce9ff6cc09286ec85ba134966aa00436028de877273c0dd9a26db0cc0d5d84ef"
+          }
+        ],
+        "fixture": "fixtures/terminal-dashboard-scenario.json",
+        "fixture_sha256": "d4c346a0551b361e5ed000e85f7a16216e7b6e03a5b339189f3421c5d370525a",
+        "method": "released agent-observer dashboard in a draining Linux PTY; pyte 0.8.2 VT cell parser; SVG text render via librsvg; no UI monkeypatch or redraw",
+        "font": "Noto Sans Mono Regular (sha256 65b5e2b2c4a1fba9ae8be1f026cb35b03dcb8886d9b2a4147054fde12f7e767d)",
+        "rasterizer": "rsvg-convert version 2.63.4",
+        "geometry": "60x20",
+        "cell_size_pixels": {
+          "width": 12,
+          "height": 24,
+          "fontSize": 20
+        },
+        "terminal_environment": {
+          "TERM": "xterm-256color",
+          "COLORTERM": "truecolor"
+        },
+        "transforms": [
+          "VT screen cells rendered to SVG at the matching terminal grid without cropping or adding UI fields",
+          "SVG rasterized to lossless PNG with librsvg"
+        ],
+        "color_mode": "--color never",
+        "working_set_window_hours": 72
+      }
+    },
+    {
+      "file": "observer-terminal-demo.mp4",
+      "source_repository": "https://github.com/byebyebryan/agent-observer",
+      "source_revision": "dcbd69d9debed39eaff3f898815dfb52c6711174",
+      "source_path": "agent_observer/terminal/dashboard.py",
+      "treatment": "Released Agent Observer 0.7.0a14 dashboard rendering from fictional cached sources; not a live fleet or physical terminal recording. One synthetic source is deliberately partial to demonstrate visible source health.",
+      "sha256": "f2f7ab353371de2532938d01964fa48089288c35c780ad6c78f5fe408d079a27",
+      "capture": {
+        "release_tag": "v0.7.0a14",
+        "release_tag_revision": "7dbcd611f7b0ecfbebf7b2e8053963fb25915999",
+        "observer_wheel_sha256": "46a1158023023b60d9b839184a45f7b7eeb21b04dce67aad808fa8277522518f",
+        "mesh_version": "0.1.0a25",
+        "mesh_wheel_sha256": "0055e42162827744add4f817d3918cfc20471e5ec5a3cdf0840d254f76f5dc3a",
+        "textual_version": "8.2.8",
+        "vt_renderer": "pyte 0.8.2",
+        "requirements_file": "scripts/terminal-capture-requirements.txt",
+        "requirements_sha256": "f156fb8d52d94447667c397880a4636698d9faf8de8efb702dfc7629bcbd7d21",
+        "pinned_dependencies": {
+          "attrs": "26.1.0",
+          "jsonschema": "4.26.0",
+          "jsonschema-specifications": "2025.9.1",
+          "linkify-it-py": "2.2.0",
+          "markdown-it-py": "4.2.0",
+          "mdit-py-plugins": "0.6.1",
+          "mdurl": "0.1.2",
+          "platformdirs": "4.13.5",
+          "pygments": "2.21.0",
+          "pyte": "0.8.2",
+          "referencing": "0.37.0",
+          "rich": "15.0.0",
+          "rpds-py": "2026.9.1",
+          "textual": "8.2.8",
+          "typing-extensions": "4.16.0",
+          "wcwidth": "0.2.13"
+        },
+        "capture_recipe": [
+          {
+            "path": "scripts/capture-terminal-media.sh",
+            "sha256": "f568ca7a9803873212a4c3b68e8b59a6a1696c5aee8942d8f687eac696d50b38"
+          },
+          {
+            "path": "scripts/capture_terminal_media.py",
+            "sha256": "b2eb5efd8de13f6d91df0f421e2c86f16a41d2cf784b5890e3c1d3d97cd05c4d"
+          },
+          {
+            "path": "scripts/terminal_colors.py",
+            "sha256": "f01466f65fcc538009f81c718e0c23b492630ee888d45ef07a6bef75869c59a9"
+          },
+          {
+            "path": "tests/test_terminal_colors.py",
+            "sha256": "ce9ff6cc09286ec85ba134966aa00436028de877273c0dd9a26db0cc0d5d84ef"
+          }
+        ],
+        "fixture": "fixtures/terminal-dashboard-scenario.json",
+        "fixture_sha256": "d4c346a0551b361e5ed000e85f7a16216e7b6e03a5b339189f3421c5d370525a",
+        "method": "released agent-observer dashboard in a draining Linux PTY; pyte 0.8.2 VT cell parser; SVG text render via librsvg; no UI monkeypatch or redraw",
+        "font": "Noto Sans Mono Regular (sha256 65b5e2b2c4a1fba9ae8be1f026cb35b03dcb8886d9b2a4147054fde12f7e767d)",
+        "rasterizer": "rsvg-convert version 2.63.4",
+        "geometry": "140x32",
+        "cell_size_pixels": {
+          "width": 12,
+          "height": 24,
+          "fontSize": 20
+        },
+        "terminal_environment": {
+          "TERM": "xterm-256color",
+          "COLORTERM": "truecolor"
+        },
+        "transforms": [
+          "Four actual PTY states rendered as matching-grid PNG frames without cropping or adding UI fields",
+          "Each SVG frame rasterized to PNG with librsvg",
+          "PNG frames encoded as 30 fps H.264 yuv420p MP4 with faststart"
+        ],
+        "video_encoder": "ffmpeg version n9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+        "color_mode": "--color always",
+        "working_set_window_hours": 72
+      }
     }
   ]
 }

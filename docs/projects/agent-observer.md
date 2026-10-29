@@ -1,27 +1,83 @@
 # Agent Observer
 
-Read-only Codex state for dashboards, diagnostics and agent utilities. Observe
-the native runtime where it lives, then choose a local or cross-host read path.
+Keep your Codex sessions in view, locally and across machines. Run a quick check,
+investigate an exact session, or keep the terminal dashboard open while you work.
+Native Codex continues to own the conversations.
 
-<!-- fleet-plus:dashboard -->
-![RLCD agent dashboard renderer showing fictional conversations and activity states.](../../assets/dashboard.png)
+<!-- fleet-plus:terminal-dashboard -->
+![Agent Observer terminal dashboard overview showing fictional Codex sessions across configured hosts, with source health and repository context.](../../assets/observer-terminal-wide.png)
 
-*Production C renderer with fictional conversations and virtual time; this is a UI
-preview, not physical panel footage. [Watch the rendered demo](../../assets/dashboard.gif)
-or read the [media provenance](../../assets/provenance.json).*
-<!-- /fleet-plus:dashboard -->
+*Released a14 terminal application rendered from fictional cached sources.*
+
+[Open the full-size dashboard](../../assets/observer-terminal-wide.png) ·
+[See the compact layout](../../assets/observer-terminal-compact.png) ·
+[Watch the terminal demo](../../assets/observer-terminal-demo.mp4) ·
+[Media provenance](../../assets/provenance.json)
+<!-- /fleet-plus:terminal-dashboard -->
+
+## Check, investigate, keep watch
+
+| Workflow | Command |
+| --- | --- |
+| Quick overview, up to ten rows | `agent-observer` |
+| All matching sessions and full IDs | `agent-observer sessions list` |
+| Search admitted session metadata | `agent-observer sessions list --query renderer` |
+| Inspect one exact session | `agent-observer sessions show FULL_THREAD_ID --host HOST --home HOME` |
+| Inspect the configured sources | `agent-observer sessions sources` |
+| Versioned output for scripts | `agent-observer sessions list --format json` |
+| Keep the dashboard open | `agent-observer dashboard` |
+
+The quick overview answers a short check without leaving an application open.
+The sessions commands expose full identities and qualified details. The optional
+dashboard keeps a view open with search, filters, source health and exact-session
+details; press `?` for keys and `q` to quit.
+
+Dashboard search also covers current cached repository roots, shared Git
+directories and relative paths. It uses admitted metadata; it does not inspect
+your filesystem or search conversation content.
+
+## Set up your sources once
+
+Requires Linux and Python 3.11+. Follow the
+[sessions CLI setup](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/sessions-cli.md)
+for the published reader pair and private `terminal.toml`. The
+[dashboard setup](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/dashboard.md)
+adds optional dependencies and reuses the same configuration. Owner guides
+retain the current hashes and installation pins.
+
+**Existing working-set publishers/bridges are a prerequisite.** Check the
+[working-set prerequisites](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/working-set.md#bounded-inspection)
+and arrange source hosting before setting up a reader.
+Use their exact host/home, source, namespace and route/socket in your terminal
+configuration. The collector's Service 4 socket is a different endpoint.
+
+Check configuration without connecting, then inspect actual source health:
+
+```sh
+agent-observer sessions sources --configured
+agent-observer sessions sources
+agent-observer
+```
+
+Installing or opening a reader starts no provider, collector or publisher. Remote
+sources use existing directional routes. [Choose your setup](../start.md) for the
+short path through these steps.
 
 ## Useful facts, with their limits intact
 
-Agent Observer supplies stable session identities, runtime/activity observations,
-coverage and independently expiring evidence. A consumer can distinguish useful
-current observations from partial, stale or unavailable state. It does not infer
-that a missing session is idle or that a disconnected source has no work.
+Membership, runtime and phase remain separate. Coverage and freshness stay
+visible even with empty results or display filters. Missing or expired evidence
+cannot prove idle work, an empty fleet or a removed conversation.
 
-The [RLCD agent dashboard](https://github.com/byebyebryan/esp32-rlcd/tree/main/projects/agent-dashboard)
-is an existing consumer. It chooses its own rows and presentation, consumes public
-observations and owns the hardware protocol. Other read-only utilities can use
-the same public boundaries without depending on that display.
+Working-set reads include admitted active membership and recent context; the
+reviewed default window is 72 hours. They are a bounded projection rather than
+the entire saved history. Delivery health cannot renew native evidence.
+
+The [compatibility guide](../compatibility.md) separates the a14 terminal reader
+from the a11 producers, independent consumers and their dated qualification.
+The fictional preview adds no native-classification, sustained capacity, resource
+or physical-device acceptance. The owner's [dashboard guide](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/dashboard.md#qualification-boundary)
+records the measured boundaries.
 
 ## Follow an observation
 
@@ -35,47 +91,37 @@ the same public boundaries without depending on that display.
 | Partial or expired evidence | Incomplete or unavailable evidence stays explicit. A missing row cannot prove an empty working set, idle work or removal. |
 <!-- /fleet-plus:read-path -->
 
-## Choose a read path
+The diagnostic core/local service remains independent of Mesh. Direct native
+snapshots, cached Service 4, working-set reads and fuller diagnostic feeds retain
+their separate uses. Start with the [first local read](https://github.com/byebyebryan/agent-observer/blob/main/docs/getting-started.md),
+[local Service 4](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/local-service.md)
+or [full Mesh reads](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/full-mesh-reads.md).
 
-| Interface | Use |
-| --- | --- |
-| Direct host snapshot | Explicit inspection against the existing owning daemon |
-| Local cached Service 4 | Read-only clients of an independently hosted collector/service |
-| Working-set reads | Admitted active membership plus recent context; the reviewed default window is 72 hours |
-| Full diagnostic feed | Fuller explicit inventories and diagnostic consumers |
-
-Core/local hosting stays independent of Mesh. Optional Mesh adds configured
-cross-host delivery. A window, terminal or tmux pane is not the authority for
-native conversation runtime state. Codex's owning daemon supplies that evidence.
-
-## Start using it
-
-Follow [your first local Observer read](https://github.com/byebyebryan/agent-observer/blob/main/docs/getting-started.md):
-install the published core in its own environment, choose an existing Codex home,
-read local state and understand the table. Requires Linux, Python 3.11+ and your
-existing native Codex runtime. Mesh, Rofi and tmux are unnecessary for this path.
-
-For shared cached observations, use the [current Service 4 guide](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/local-service.md).
-It covers an existing endpoint or a separately owned foreground publisher, cached
-reads, watching and cleanup. Fleet delivery is an optional next step after the
-local read works, with compatible Mesh, publishers and directional host routes.
-
-For a utility, use the [bounded public-read example](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/read-utilities.md)
+For your own utility, use the [bounded public-read example](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/read-utilities.md)
 and [API 4 contract](https://github.com/byebyebryan/agent-observer/blob/main/docs/reference/read-api.md).
-The example supplies a content-free diagnostic summary; it is a developer example,
-not a new daemon, wire contract or installed product.
+The reader supplies facts; your utility owns its presentation.
+
+## A separate hardware consumer
+
+The [RLCD agent dashboard](https://github.com/byebyebryan/esp32-rlcd/tree/main/projects/agent-dashboard)
+turns public observations into a desk display. It owns row selection, the device
+protocol and physical acceptance, with its own Observer/Mesh selection.
+
+<!-- fleet-plus:dashboard -->
+![RLCD agent dashboard renderer showing fictional conversations and activity states.](../../assets/dashboard.png)
+
+*Production C renderer with fictional conversations and virtual time; this is a UI
+preview, not physical panel footage. [Watch the rendered demo](../../assets/dashboard.gif)
+or read the [media provenance](../../assets/provenance.json).*
+<!-- /fleet-plus:dashboard -->
 
 ## Current scope
 
 Codex is the only implemented native observation adapter. Claude monitoring,
-Observer writes and standalone active-only delivery are retired. Working-set
+Observer writes and standalone active-only hosting are retired. Working-set
 retains active membership; native provider tools own conversation control.
 
 [Agent Plus](agent-plus.md) independently opens native Codex/Claude TUIs and
-does not depend on Observer. [Codex Plus](https://dev.byebyebryan.com/codex-plus/)
-provides separate native workflow augmentations. Neither relationship grants
-Observer action authority.
-
-The [compatibility guide](../compatibility.md) records the published working-set
-pair, independent consumer versions and dated operational limits. Experimental
-transport adoption retains its own explicit selection and qualification.
+needs neither Observer nor Tmux. [Codex Plus](https://dev.byebyebryan.com/codex-plus/)
+provides separate native workflow augmentations. Experimental transports retain
+their own explicit selection and qualification.

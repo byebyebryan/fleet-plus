@@ -12,7 +12,7 @@ describes project relationships. Configured host access has its own direction.*
 
 | Responsibility | Projects | Boundary |
 | --- | --- | --- |
-| Read-only agent facts | Agent Observer | Codex identity, runtime/activity, freshness and coverage |
+| Terminal observation and public reads | Agent Observer | Codex identity, runtime/activity, freshness and coverage |
 | Host access and state delivery | Mesh Plus + SSH Plus | Logical hosts/routes, SSH entry and bounded cached delivery |
 | Native agent entry | Agent Plus | Environment inventory and owned TUI window launch/focus |
 | Generic tmux tooling | Tmux Observer + Tmux Plus | Native tmux facts, prepared views, browsing and explicit actions |
@@ -20,6 +20,12 @@ describes project relationships. Configured host access has its own direction.*
 Agent Observer's core/local service remains Mesh-free. Optional Mesh carries
 already published observations through pure profiles. Mesh supplies delivery
 validity; it does not classify agent work or collect from a provider.
+
+Observer's terminal sessions CLI and dashboard read existing working-set Mesh
+bridges through an explicit private source configuration. The finite CLI,
+persistent TUI, producer hosting and hardware clients are independently selected.
+Opening a terminal reader starts no collector or provider. Mesh and SSH Plus
+also serve host access independently of Observer.
 
 Agent Plus consumes Host Mesh routes through SSH Plus's public interface. It
 has its own host helper and native-window registry. It does not consume Observer

@@ -1,0 +1,18 @@
+# Runtime dependencies from the a14 dashboard qualification, plus the pinned
+# PTY screen reader used to turn terminal cells into a PNG.
+attrs==26.1.0
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+linkify-it-py==2.2.0
+markdown-it-py==4.2.0
+mdit-py-plugins==0.6.1
+mdurl==0.1.2
+platformdirs==4.13.5
+pygments==2.21.0
+pyte==0.8.2
+referencing==0.37.0
+rich==15.0.0
+rpds-py==2026.9.1
+textual==8.2.8
+typing-extensions==4.16.0
+wcwidth==0.2.13

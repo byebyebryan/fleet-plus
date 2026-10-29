@@ -1,0 +1,132 @@
+{
+  "description": "Fictional cached Codex observations for the released Agent Observer a14 terminal dashboard. No real conversation, host, repository, or source is represented.",
+  "search": "signal-map",
+  "hosts": [
+    {
+      "id": "cedar-studio",
+      "label": "Studio",
+      "health": "current",
+      "sessions": [
+        {
+          "id": "a1000000-0000-4000-8000-000000000001",
+          "title": "Refresh reader snapshots",
+          "phase": "working",
+          "runtime": "running",
+          "blockedReasons": [],
+          "activitySecondsAgo": 18,
+          "cwd": "/workspaces/observer-reader/src",
+          "workspaceRoot": "/workspaces/observer-reader",
+          "workspaceKey": "observer-reader",
+          "workspacePath": "src",
+          "projectKey": "observer-reader",
+          "repoRoot": "/workspaces/observer-reader",
+          "repoPath": "src/terminal"
+        },
+        {
+          "id": "a1000000-0000-4000-8000-000000000002",
+          "title": "Clarify setup guide",
+          "phase": "waiting",
+          "runtime": "running",
+          "blockedReasons": [],
+          "activitySecondsAgo": 64,
+          "cwd": "/workspaces/observer-reader/docs",
+          "workspaceRoot": "/workspaces/observer-reader",
+          "workspaceKey": "observer-reader",
+          "workspacePath": "docs",
+          "projectKey": "observer-reader",
+          "repoRoot": "/workspaces/observer-reader",
+          "repoPath": "docs/setup"
+        },
+        {
+          "id": "a1000000-0000-4000-8000-000000000003",
+          "title": "Parked cache audit",
+          "phase": null,
+          "runtime": "parked",
+          "blockedReasons": [],
+          "activitySecondsAgo": 148,
+          "cwd": "/workspaces/observer-reader/tools",
+          "workspaceRoot": "/workspaces/observer-reader",
+          "workspaceKey": "observer-reader",
+          "workspacePath": "tools",
+          "projectKey": "observer-reader",
+          "repoRoot": "/workspaces/observer-reader",
+          "repoPath": "tools/cache-audit"
+        }
+      ]
+    },
+    {
+      "id": "quartz-build",
+      "label": "Build",
+      "health": "current",
+      "sessions": [
+        {
+          "id": "a2000000-0000-4000-8000-000000000004",
+          "title": "Trace signal map",
+          "phase": "working",
+          "runtime": "running",
+          "blockedReasons": [],
+          "activitySecondsAgo": 12,
+          "cwd": "/workspaces/mesh-lab/packages/signal-map",
+          "workspaceRoot": "/workspaces/mesh-lab",
+          "workspaceKey": "mesh-lab",
+          "workspacePath": "packages/signal-map",
+          "projectKey": "mesh-lab",
+          "repoRoot": "/workspaces/mesh-lab",
+          "repoPath": "packages/signal-map"
+        },
+        {
+          "id": "a2000000-0000-4000-8000-000000000005",
+          "title": "Review delivery limits",
+          "phase": "blocked",
+          "runtime": "running",
+          "blockedReasons": ["approval"],
+          "activitySecondsAgo": 92,
+          "cwd": "/workspaces/mesh-lab/docs",
+          "workspaceRoot": "/workspaces/mesh-lab",
+          "workspaceKey": "mesh-lab",
+          "workspacePath": "docs",
+          "projectKey": "mesh-lab",
+          "repoRoot": "/workspaces/mesh-lab",
+          "repoPath": "docs/delivery"
+        }
+      ]
+    },
+    {
+      "id": "juniper-lab",
+      "label": "Lab",
+      "health": "partial",
+      "sessions": [
+        {
+          "id": "a3000000-0000-4000-8000-000000000006",
+          "title": "Compare worktree roots",
+          "phase": "working",
+          "runtime": "running",
+          "blockedReasons": [],
+          "activitySecondsAgo": 39,
+          "cwd": "/workspaces/host-tools/tests",
+          "workspaceRoot": "/workspaces/host-tools",
+          "workspaceKey": "host-tools",
+          "workspacePath": "tests",
+          "projectKey": "host-tools",
+          "repoRoot": "/workspaces/host-tools",
+          "repoPath": "tests/worktrees"
+        },
+        {
+          "id": "a3000000-0000-4000-8000-000000000007",
+          "title": "Archive runner notes",
+          "phase": null,
+          "runtime": "parked",
+          "blockedReasons": [],
+          "activitySecondsAgo": 176,
+          "cwd": "/workspaces/host-tools/docs",
+          "workspaceRoot": "/workspaces/host-tools",
+          "workspaceKey": "host-tools",
+          "workspacePath": "docs",
+          "projectKey": "host-tools",
+          "repoRoot": "/workspaces/host-tools",
+          "repoPath": "docs/runner"
+        }
+      ]
+    }
+  ]
+}
