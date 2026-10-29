@@ -1,100 +1,81 @@
-# Fleet Plus presentation delivery
+# Fleet Plus delivery
 
-## Current pass: the terminal product
+## Completed: terminal-product presentation
 
-Accepted 2026-10-29: present the released Agent Observer CLI/dashboard as the
-main everyday Observer experience. Fleet Plus remains the umbrella for six
-independent projects; RLCD remains a separate hardware consumer. Sol owns design
-and copy, Luna Max owns bounded media/site implementation, and the primary owns
-integration, review and publication. The user authorized the goal loop and the
-planned commits, pushes, metadata updates and site publication.
+The 2026-10-29 presentation pass is published. Agent Observer leads with quick
+checks, session investigation and a persistent dashboard. Fleet Plus remains
+the shared home for six independent projects; RLCD is a separate hardware
+consumer with its own delivery and acceptance.
 
-The message is: **Keep your Codex sessions in view, locally and across machines.**
-Native Codex owns conversation control. Observer reads configured working-set
-sources; the reader needs existing collectors/publishers/bridges. Public setup
-links must explain that prerequisite without assuming private chezmoi files.
+- [Fleet Plus source](https://github.com/byebyebryan/fleet-plus/commit/391a7c57faf805fe88957dca41e7b90af711a4ae)
+  and its [successful publication check](https://github.com/byebyebryan/fleet-plus/actions/runs/40854588924)
+  bind the terminal showcase, setup/compatibility guides, catalog and native media.
+- [Devlog source](https://github.com/byebyebryan/byebyebryan.github.io/commit/9eb516dbe9a0424d7d7cbf8f2b9778dec9f4a130)
+  and its [successful publication check](https://github.com/byebyebryan/byebyebryan.github.io/actions/runs/40863253105)
+  bind the article and final portfolio figure. The existing card remains between
+  Desk displays and Rofi Plus.
+- Observer's GitHub description/topics match the terminal-product catalog.
+  Source/build/browser checks, public CI and served-byte comparison were separate
+  gates. This publication changed no managed runtime selection.
 
-## Deliverables and ownership
+## Presentation choices to retain
 
-| Surface | Work |
-| --- | --- |
-| Homepage | Give the terminal showcase enough width to remain readable. Keep host access, native TUI entry and tmux as independent entry points. |
-| Observer product page | Lead with quick check, investigation and persistent watching. Keep public read APIs and RLCD as additional uses. |
-| Setup guide | Explain reader installation, one-time explicit source configuration and first overview/dashboard; link to canonical component instructions. |
-| Compatibility | One current dated role table, with immutable links for historical checkpoints. Distinguish a14 reader from a11/Mesh a25 producers and independent Agent Plus a17, Tmux and hardware selections. |
-| Catalog and GitHub | Refresh Observer description/topics and current release references; retain accurate metadata for the other projects. |
-| Devlog/portfolio | Add one terminal-product article; rename the existing Observer Core card to Fleet Plus in its current position and reuse approved terminal media. Preserve other cards. |
+The message is **Keep your Codex sessions in view, locally and across machines.**
 
-Fleet Plus owns presentation, the capture recipe, committed media and provenance.
-Component repositories retain contracts, installation guides and runtime releases.
-Devlog owns its article and portfolio content. Managed runtime selections stay
-with their existing deployment owners and are unchanged by this pass.
+Use a readable workflow figure on the small Devlog portfolio card: Fleet Plus
+identity, Agent Observer prominent, a local/multi-host cue and **Quick check ·
+Investigate · Keep watch**. Keep the shared card proportions. This is an overview
+illustration, not a terminal screenshot or a diagram of the old tmux runtime.
 
-## Media contract
+Use the actual released a14 terminal captures and opt-in demo on Fleet Plus and
+in the detailed article. The wide/compact stills and 20-second demo use fictional
+cached sources; their recipe, inputs, transformations and hashes are recorded in
+`assets/provenance.json`. They establish rendering, not live-fleet accuracy,
+resource capacity or physical-device acceptance. Existing RLCD media and its
+notices retain their separate provenance.
 
-Use the actual released a14 application with invented cached sources, never
-live conversation data or a website imitation of the terminal UI. Record exact
-package/dependency inputs, capture method, fictional input scope, transformations
-and output hashes. Media generation is explicit and separate from the offline
-site build; it must not query providers or discover sessions.
+Keep static Markdown images, captions and links independently readable on
+GitHub. The `terminal-dashboard` enhancement belongs to the terminal preview;
+`dashboard` continues to mean the RLCD consumer. Playback is explicit, with
+keyboard controls, reduced-motion handling and pause when hidden/offscreen.
 
-Deliver a wide native dashboard still, a compact native layout for mobile and
-an approximately 15–20-second opt-in MP4 demo with a still poster. Use the same
-fictional scenario across layouts. The story is overview, repository search,
-selected-session details and return to overview, with readable holds. No new
-product capability or native/physical acceptance is implied by the demonstration.
+## Current follow-up: first-source onboarding
 
-Use these public asset names: `observer-terminal-wide.png`,
-`observer-terminal-compact.png`, `observer-terminal-demo.mp4`. The shared
-`terminal-dashboard` Markdown enhancement must retain a complete static image,
-video link and caption. Existing `dashboard` media continues to mean the RLCD
-consumer, with original provenance and notices retained.
+A reader needs an existing working-set collector/publisher/bridge. The next
+pass closes the public setup gap from an already existing Codex home/daemon to
+a usable local CLI/dashboard, then one explicitly directional remote source.
+It must work without the maintainer's private chezmoi files.
 
-Static content must work without JavaScript or playback. Playback is explicit;
-respect reduced-motion preferences and pause media when hidden/offscreen. Keep
-keyboard controls, descriptive captions, full-size access and readable mobile
-copy. Do not force a wide terminal into the old small device frame.
+Agent Observer owns the canonical procedure and any necessary public hosting
+example. Mesh owns authority/delivery contracts; Fleet Plus links to the owning
+instructions rather than copying package pins or a competing hosting recipe.
+Use explicit source identity, namespace, window and endpoint values. Reuse
+existing managed endpoints instead of silently starting another collector.
 
-## Checkpoints
+Validate the procedure with isolated owned resources and exact published package
+inputs. Keep procedural/source/package evidence distinct from independent native
+accuracy, managed deployment and human/physical acceptance. Do not change fleet
+configuration, ordinary native sessions or managed pins to make onboarding pass.
 
-1. Commit this scope before implementation. Settle the design/copy contract and
-   produce a native media preview at desktop and compact sizes.
-2. Integrate reviewed media, Fleet Plus content/layout and source metadata. Keep
-   every source Markdown page independently readable on GitHub.
-3. Integrate the Devlog article/card and provenance using approved shared media.
-   Keep historical articles dated and repair links to stable historical records.
-4. Commit reviewed candidates, run each owner's source/build/link/browser gates,
-   push and publish. Verify exact-head CI, GitHub metadata and served file bytes.
+## Stable project boundaries
 
-## Acceptance and boundaries
+Native Codex owns conversations; Observer is read-only and Codex-only. Observer
+writes, Claude monitoring and standalone active-only hosting remain retired.
+Working-set retains active membership and recent context. Core/local Service 4
+remains Mesh-free; the terminal reader uses explicitly configured Mesh bridges.
 
-- A visitor can understand the product, see readable native UI and reach the
-  public reader setup guide from the homepage, GitHub or portfolio.
-- Ten Fleet Plus routes remain useful at 320, 390, 768 and 1280 pixels; verify
-  keyboard navigation, no-JavaScript reading, playback, reduced motion and no
-  overflow. New public files belong to the explicit build inventory.
-- Current role/version statements bind published artifacts and dated owner
-  evidence. A14 reader delivery does not promote a11 collectors or hardware pins.
-- Original evidence is preserved through fixed source/release links; failed and
-  incomplete qualification is not promoted to a pass. The old Starship a10
-  clock-recovery incident was addressed by the qualified/deployed a11 fix; this
-  presentation pass adds no new reboot, native, capacity or physical proof.
-- Directional access stays directional. Agent Plus stays independent of Observer
-  and Tmux. Generic tmux actions remain supported; Observer writes, Claude
-  monitoring and standalone active-only hosting remain retired.
-- Sidebar/native composition, stress optimization and the extended soak stay
-  deferred. No native service/process/configuration or managed role is changed.
-- Source, local preview, public CI, metadata and actual served-byte verification
-  are recorded separately. Commit/push progress does not alone prove publication.
+Mesh/SSH host access stays directional. Agent Plus independently enters native
+Codex/Claude TUIs without Observer or Tmux. Generic Tmux actions stay supported.
+Reader, producer, Tmux and hardware roles retain their independent selections;
+the [compatibility guide](compatibility.md) owns the dated role table.
 
-## Established boundaries and first edition
+Sidebar/native composition, delta transport, stress optimization and the extended
+soak retain their independent roadmap and qualification. A presentation or
+onboarding change does not select those paths.
 
 The [repository decision](decisions/0001-project-and-presentation-boundaries.md)
-retains independent source repositories and one shared site. Revisit a monorepo
-only if recurring coordination cost warrants it.
-
-The first edition and its dated scope remain
-[in Git](https://github.com/byebyebryan/fleet-plus/blob/07e815ea198bfff1fb9b08a3e0270d7a905ebde6/docs/delivery-plan.md).
-Its [presentation receipt](evidence/2026-10-23-presentation/README.md) and
-[onboarding corrections](evidence/2026-10-23-onboarding/README.md) retain their
-original evidence and limits.
+retains independent source repositories and one shared site. The
+[first-edition plan](https://github.com/byebyebryan/fleet-plus/blob/07e815ea198bfff1fb9b08a3e0270d7a905ebde6/docs/delivery-plan.md),
+[presentation receipt](evidence/2026-10-23-presentation/README.md) and
+[earlier onboarding corrections](evidence/2026-10-23-onboarding/README.md) retain
+their original dated evidence and limits.
