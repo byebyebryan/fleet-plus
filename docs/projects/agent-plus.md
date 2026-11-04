@@ -47,7 +47,28 @@ other terminal backends, Mosh and picker-driven Close remain outside the current
 supported path. Claude native entry is supported independently of Observer's
 retired Claude monitoring.
 
-The a17 release corrects Claude default-home configuration selection. Source,
-installed-package and managed evidence remain separate from native desktop
-appearance/input acceptance; see the [compatibility guide](../compatibility.md)
-and the owner's [operations guide](https://github.com/byebyebryan/rofi-agent-plus/blob/main/docs/maintenance/operations.md).
+## Seven-day environment ordering
+
+Each desktop keeps its own Agent Plus usage history. Each host, provider and
+native-home combination has its own count; environments from all hosts are
+ranked together. An accepted Open/New window launch or successful focus counts
+once; discovery, filtering and work
+inside a native TUI do not.
+
+When any listed environment has a use in the rolling 168-hour window, higher
+weekly counts sort first. Ties retain the existing Host Mesh, provider and
+native-home order; numbered windows stay grouped inside their environment. If
+all listed environments have zero weekly uses, retained last-use times supply
+the recency fallback. The last window opened or focused through the picker is
+highlighted separately from the ranked list. The native launcher freezes row scores for the dialog,
+then captures current usage again when opened next time.
+
+Usage history starts empty with a19; the existing last-selection hint is kept.
+The owner [usage guide](https://github.com/byebyebryan/rofi-agent-plus/blob/main/docs/guides/usage.md)
+and [managed operations guide](https://github.com/byebyebryan/rofi-agent-plus/blob/main/docs/maintenance/operations.md)
+cover the state and installed-selection boundary.
+
+The v0.15.0a19 release adds this ordering behavior. Source, package,
+managed selection and native desktop appearance/input evidence remain separate;
+see the [compatibility guide](../compatibility.md) and the owner's
+[operations guide](https://github.com/byebyebryan/rofi-agent-plus/blob/main/docs/maintenance/operations.md).

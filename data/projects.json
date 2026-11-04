@@ -48,7 +48,7 @@
       "name": "SSH Plus",
       "repo": "rofi-ssh-plus",
       "role": "Host access",
-      "description": "Rofi SSH host picker and public Host Mesh routing interface.",
+      "description": "Rofi SSH host picker with seven-day usage ordering and the public Host Mesh routing interface.",
       "topics": [
         "developer-tools",
         "fleet-plus",
@@ -66,7 +66,7 @@
       "name": "Agent Plus",
       "repo": "rofi-agent-plus",
       "role": "Native TUI entry",
-      "description": "Rofi launcher for local and remote Codex and Claude TUIs, with environment discovery and exact window focus.",
+      "description": "Rofi launcher for local and remote Codex and Claude TUIs, with exact window focus and rolling seven-day environment ordering.",
       "topics": [
         "claude-code",
         "codex",
@@ -81,7 +81,7 @@
         "tui"
       ],
       "docs": "https://github.com/byebyebryan/rofi-agent-plus/blob/main/README.md",
-      "release": "v0.15.0a17",
+      "release": "v0.15.0a19",
       "featured": false
     },
     {
