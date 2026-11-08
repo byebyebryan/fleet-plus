@@ -12,7 +12,7 @@ acceptance are separate checkpoints.
 | --- | --- | --- |
 | Terminal sessions CLI and optional dashboard | Agent Observer **0.7.0a14** + Mesh **0.1.0a25** | [CLI setup](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/sessions-cli.md), [dashboard setup](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/dashboard.md) and [a14 provenance](https://github.com/byebyebryan/agent-observer/releases/download/v0.7.0a14/provenance.json) |
 | Collector and working-set publication | Agent Observer **0.7.0a11** + Mesh **0.1.0a25** | [a11 release](https://github.com/byebyebryan/agent-observer/releases/tag/v0.7.0a11), [provenance](https://github.com/byebyebryan/agent-observer/releases/download/v0.7.0a11/provenance.json) and [operations](https://github.com/byebyebryan/agent-observer/blob/main/docs/maintenance/operations.md) |
-| Native Codex/Claude entry | Agent Plus **0.15.0a19**; managed selection remains separately owned | [a19 release](https://github.com/byebyebryan/rofi-agent-plus/releases/tag/v0.15.0a19), [usage behavior](https://github.com/byebyebryan/rofi-agent-plus/blob/main/docs/guides/usage.md) and [managed operations](https://github.com/byebyebryan/rofi-agent-plus/blob/main/docs/maintenance/operations.md) |
+| Native Codex/Claude entry | Agent Plus **0.15.0a20**; managed selection and host adoption remain separately owned | [a20 release and provenance](https://github.com/byebyebryan/rofi-agent-plus/releases/tag/v0.15.0a20), [usage behavior](https://github.com/byebyebryan/rofi-agent-plus/blob/main/docs/guides/usage.md) and [managed operations](https://github.com/byebyebryan/rofi-agent-plus/blob/main/docs/maintenance/operations.md) |
 | Generic tmux | Tmux Observer **0.6.0a9** + Tmux Plus **0.12.0a8** bundle; reader/bridge Mesh **0.1.0a24** | [Observer supply record](https://github.com/byebyebryan/tmux-observer/blob/13f6c9d76bb0202a131a0ee48aab0853f42709a0/docs/evidence/2026-10-23-public-delivery/README.md) and [Plus bundle record](https://github.com/byebyebryan/rofi-tmux-plus/blob/c75cc92e2d1cd67839a09818af18104ebd720df8/docs/evidence/2026-10-23-public-delivery/README.md) |
 | RLCD hardware consumer | Its independent Observer **0.7.0a8** + Mesh **0.1.0a24** bundle | [Hardware operations](https://github.com/byebyebryan/esp32-rlcd/blob/main/projects/agent-dashboard/docs/operations.md) and [dated ticker trial](https://github.com/byebyebryan/esp32-rlcd/blob/edfb2fdfde9805d12b63384ee9145639890ba960/projects/agent-dashboard/docs/evidence/2026-10-21-age-ticker/REPORT.md) |
 | Full diagnostic publishers / SSH authority | Independently selected by their deployment owner | [Historical role record](https://github.com/byebyebryan/fleet-plus/blob/07e815ea198bfff1fb9b08a3e0270d7a905ebde6/docs/compatibility.md#independent-installed-roles-at-the-2026-10-23-checkpoint) and current owner manifests |
@@ -26,8 +26,13 @@ working-set version-1 interfaces retain their separate contracts.
 Agent Plus a19 adds per-desktop rolling 168-hour environment ordering with an
 all-zero recency fallback. Its request counts and frozen dialog ranking are
 defined by the owner [usage guide](https://github.com/byebyebryan/rofi-agent-plus/blob/main/docs/guides/usage.md).
-Publishing that release does not select a new managed package or replace
-desktop appearance/input acceptance.
+Agent Plus a20 leaves animation preferences to the native provider and retains
+legacy motion inputs as validated no-ops. Its installed-wheel and controlled
+host-entry checks do not establish physical desktop or native provider acceptance.
+The managed source selects a20; as of the November 7 release review, host
+adoption remains a separate rollout, with Carbon offline. The earlier a19
+three-host delivery is a dated checkpoint, not evidence of a20 adoption. The
+deployment owner retains current host status and rollback inputs.
 Tmux Plus a8 is bundle-only: use its exact Tmux Observer payload and module/hash
 guard. A matching version string or historical inner-wheel digest does not
 establish a published standalone wheel.

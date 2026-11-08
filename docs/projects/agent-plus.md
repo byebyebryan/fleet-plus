@@ -16,6 +16,10 @@ Agent Plus discovers environments and tracks its own dedicated windows. Open
 focuses the exact selected registered window or enters its environment; New window
 creates an independent native TUI client. Native Codex/Claude managers own the
 conversations, work, settings and authentication inside those windows.
+Since [a20](https://github.com/byebyebryan/rofi-agent-plus/releases/tag/v0.15.0a20),
+new entries leave animation preferences to the native provider. Older motion
+settings remain accepted and validated but no longer override those preferences.
+Existing registered windows can still be focused without relaunching them.
 
 Inventory is about environments and window ownership. It is different from
 Agent Observer's read-only conversation/runtime observations. Agent Plus needs

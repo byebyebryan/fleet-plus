@@ -27,6 +27,9 @@ usage.
 
 The new history schema starts fresh and leaves the former generic and DMS files
 untouched for rollback. It does not import their old records or lifetime counts.
+Close and reopen a picker that was already open during the schema upgrade; its
+old action state is safely rejected until refreshed. Existing SSH terminals and
+native provider sessions continue independently.
 The owner [usage guide](https://github.com/byebyebryan/rofi-ssh-plus/blob/main/docs/guides/usage.md)
 describes counting, Forget history and launcher behavior.
 
