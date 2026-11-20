@@ -49,13 +49,17 @@ uses published working-set data through its configured bridges.
 See the [Codex 0.167 change](https://github.com/openai/codex/pull/58239) and
 [Observer native validation](https://github.com/byebyebryan/agent-observer/blob/main/docs/maintenance/validation.md).
 
-Use the configured Codex home to scope observation. Native history and resume
-pickers can filter by signed-in account. The command center also applies its
-own rules for which conversations appear at the top level. Observer's
-working-set reads use their own admission, coverage and freshness rules.
-See [native account filtering](https://github.com/openai/codex/pull/58918),
-[command center handling of attached threads](https://github.com/openai/codex/pull/61218)
-and the [working-set contract](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/working-set.md).
+An Observer source is scoped to its configured Codex home. The native history
+and resume pickers can filter by signed-in account. Use distinct Codex homes
+and bind each reader to the sources it should see when you need separate
+observation scopes. See [native account filtering](https://github.com/openai/codex/pull/58918)
+and [Observer source setup](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/source-setup.md).
+
+When comparing rows, check which view includes the session. Codex 0.171 hides
+attached side chats from the command center's top-level list. Observer applies
+its own working-set admission, coverage and freshness rules. See the
+[command center change](https://github.com/openai/codex/pull/61218) and the
+[working-set contract](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/working-set.md).
 
 ## What the releases establish
 
