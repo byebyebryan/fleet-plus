@@ -21,6 +21,7 @@ Native Codex continues to own the conversations.
 | --- | --- |
 | Quick overview, up to ten rows | `agent-observer` |
 | All matching sessions and full IDs | `agent-observer sessions list` |
+| Filter by Working status | `agent-observer sessions list --status working` |
 | Search admitted session metadata | `agent-observer sessions list --query renderer` |
 | Inspect one exact session | `agent-observer sessions show FULL_THREAD_ID --host HOST --home HOME` |
 | Inspect the configured sources | `agent-observer sessions sources` |
@@ -77,7 +78,7 @@ Working-set reads include admitted active membership and recent context; the
 reviewed default window is 72 hours. They are a bounded projection rather than
 the entire saved history. Delivery health cannot renew native evidence.
 
-The [compatibility guide](../compatibility.md) separates the a14 terminal reader
+The [compatibility guide](../compatibility.md) separates the a19 terminal reader
 from the a11 producers, independent consumers and their dated qualification.
 The fictional preview adds no native-classification, sustained capacity, resource
 or physical-device acceptance. The owner's [dashboard guide](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/dashboard.md#qualification-boundary)

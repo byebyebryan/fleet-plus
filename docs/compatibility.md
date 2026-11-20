@@ -10,7 +10,7 @@ acceptance are separate checkpoints.
 
 | Role | Current version boundary | Owner record |
 | --- | --- | --- |
-| Terminal sessions CLI and optional dashboard | Agent Observer **0.7.0a14** + Mesh **0.1.0a25** | [CLI setup](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/sessions-cli.md), [dashboard setup](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/dashboard.md) and [a14 provenance](https://github.com/byebyebryan/agent-observer/releases/download/v0.7.0a14/provenance.json) |
+| Terminal sessions CLI and optional dashboard | Agent Observer **0.7.0a19** + Mesh **0.1.0a25** | [CLI setup](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/sessions-cli.md), [dashboard setup](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/dashboard.md) and [a19 provenance](https://github.com/byebyebryan/agent-observer/releases/download/v0.7.0a19/provenance.json) |
 | Collector and working-set publication | Agent Observer **0.7.0a11** + Mesh **0.1.0a25** | [a11 release](https://github.com/byebyebryan/agent-observer/releases/tag/v0.7.0a11), [provenance](https://github.com/byebyebryan/agent-observer/releases/download/v0.7.0a11/provenance.json) and [operations](https://github.com/byebyebryan/agent-observer/blob/main/docs/maintenance/operations.md) |
 | Native Codex/Claude entry | Agent Plus **0.15.0a20**; managed selection and host adoption remain separately owned | [a20 release and provenance](https://github.com/byebyebryan/rofi-agent-plus/releases/tag/v0.15.0a20), [usage behavior](https://github.com/byebyebryan/rofi-agent-plus/blob/main/docs/guides/usage.md) and [managed operations](https://github.com/byebyebryan/rofi-agent-plus/blob/main/docs/maintenance/operations.md) |
 | Generic tmux | Tmux Observer **0.6.0a9** + Tmux Plus **0.12.0a8** bundle; reader/bridge Mesh **0.1.0a24** | [Observer supply record](https://github.com/byebyebryan/tmux-observer/blob/13f6c9d76bb0202a131a0ee48aab0853f42709a0/docs/evidence/2026-10-23-public-delivery/README.md) and [Plus bundle record](https://github.com/byebyebryan/rofi-tmux-plus/blob/c75cc92e2d1cd67839a09818af18104ebd720df8/docs/evidence/2026-10-23-public-delivery/README.md) |
@@ -26,26 +26,45 @@ working-set version-1 interfaces retain their separate contracts.
 Agent Plus a19 adds per-desktop rolling 168-hour environment ordering with an
 all-zero recency fallback. Its request counts and frozen dialog ranking are
 defined by the owner [usage guide](https://github.com/byebyebryan/rofi-agent-plus/blob/main/docs/guides/usage.md).
+
 Agent Plus a20 leaves animation preferences to the native provider and retains
 legacy motion inputs as validated no-ops. Its installed-wheel and controlled
 host-entry checks do not establish physical desktop or native provider acceptance.
-The managed source selects a20; as of the November 7 release review, host
-adoption remains a separate rollout, with Carbon offline. The earlier a19
-three-host delivery is a dated checkpoint, not evidence of a20 adoption. The
-deployment owner retains current host status and rollback inputs.
+The deployment owner retains installed checks, current host status and rollback
+inputs. The [November 7 release checkpoint](https://github.com/byebyebryan/fleet-plus/blob/82363765f8dbdb1f8784bf7bd8d575593c038462/docs/compatibility.md)
+preserves the original rollout state.
+
 Tmux Plus a8 is bundle-only: use its exact Tmux Observer payload and module/hash
 guard. A matching version string or historical inner-wheel digest does not
 establish a published standalone wheel.
 
-## What this checkpoint establishes
+## Codex upgrades
 
-The a14 reader adds literal dashboard search across current cached repository
-metadata, retaining the earlier session CLI and dashboard behavior. Its release
-provenance binds qualified artifacts and checks. The owner's
+Agent Plus opens the native `codex agents` interface. From Codex 0.167, that
+command can use the shared daemon when eligible under Codex's own startup rules.
+Agent Observer's native collector reads the existing owned daemon for its
+configured home. When qualifying a Codex upgrade, use the version of the daemon
+serving that home as well as the launcher version. The standalone Observer reader
+uses published working-set data through its configured bridges.
+See the [Codex 0.167 change](https://github.com/openai/codex/pull/58239) and
+[Observer native validation](https://github.com/byebyebryan/agent-observer/blob/main/docs/maintenance/validation.md).
+
+Use the configured Codex home to scope observation. Native history and resume
+pickers can filter by signed-in account. The command center also applies its
+own rules for which conversations appear at the top level. Observer's
+working-set reads use their own admission, coverage and freshness rules.
+See [native account filtering](https://github.com/openai/codex/pull/58918),
+[command center handling of attached threads](https://github.com/openai/codex/pull/61218)
+and the [working-set contract](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/working-set.md).
+
+## What the releases establish
+
+The a19 reader gives the dashboard a two-line layout at 32–99 columns and
+retains the four-column layout from 100 columns. Its release evidence covers
+the installed package and bounded cached-reader behavior. The owner's
 [qualification boundary](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/dashboard.md#qualification-boundary)
-retains the native and resource measurement limits. This presentation uses the
-released application with fictional cached inputs; it adds no independent
-native-classification, sustained capacity, resource or physical-device proof.
+tracks native and resource measurements separately. Fleet Plus shows the
+released a14 application with fictional cached inputs in its media preview.
 
 The a11 producer uses bounded clock uncertainty to recover quiet and first-seen
 sessions across observed clock changes within one collector incarnation. The

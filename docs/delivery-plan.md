@@ -48,9 +48,9 @@ source. It includes profile/namespace resolution, private configuration,
 noninteractive SSH command selection and cleanup without private chezmoi files.
 
 The guide pins its reviewed launcher example to an immutable source revision.
-Its producer uses the published a11/Mesh a25 pair; the separate reader retains
-a14/Mesh a25. These are example/configuration additions, not a new runtime
-package or a managed-role upgrade. Existing hosted sources should be reused.
+Its producer uses the published a11/Mesh a25 pair. The current guide points to
+the separate a19/Mesh a25 reader. Reuse existing hosted sources when setting up
+the CLI or dashboard.
 
 Observer owns that procedure and example. Mesh owns authority/delivery contracts;
 Fleet Plus links to those owners rather than copying package pins or maintaining
