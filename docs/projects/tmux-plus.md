@@ -28,9 +28,14 @@ module hashes. A matching version string on a different source build is insuffic
 
 ## Release and managed scope
 
-The a9 prerelease is bundle-only and pairs with Tmux Observer a9. The launcher
+The a10 prerelease is bundle-only and pairs with Tmux Observer a9. The launcher
 checks the packaged mode's integrity and uses Rofi's mode ABI and refresh
 interface for compatibility. The release was qualified with Rofi 2.0.0 and
 2.1.1. The Tmux Mesh reader and bridge use a24 full-view delivery.
 See the [a9 qualification record](https://github.com/byebyebryan/rofi-tmux-plus/blob/406eea2494a0fbc892a643b4fb44fec55d3517a3/docs/maintenance/development.md#package-and-acceptance-boundaries).
+
+For prepared reads, watch and refresh, a10 can explicitly select an independently
+installed `tmux-observer-client` using Fleet v1. The default route, fresh inventory
+and guarded actions still use the paired Observer payload.
+See the [process setup](https://github.com/byebyebryan/rofi-tmux-plus/blob/main/docs/maintenance/development.md#test-the-prepared-client-process-interface).
 See [compatibility](../compatibility.md) before changing a role's selection.

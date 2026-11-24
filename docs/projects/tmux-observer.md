@@ -28,7 +28,7 @@ compatible Mesh/SSH configuration and the matching source publisher.
 
 ## Supported and experimental paths
 
-Released Observer a9 and Tmux Plus a9 use their independently selected Mesh a24
+Released Observer a9 and Tmux Plus a10 use their independently selected Mesh a24
 reader/bridge and normal full-view delivery. The optional complete-view feed pilot
 is explicit and unselected; semantic delta is also unselected.
 
