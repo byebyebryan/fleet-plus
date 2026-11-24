@@ -18,18 +18,19 @@ generic/manual tmux purpose; it is not a required agent-runtime layer.
 
 ## Start using it
 
-Follow the [repository launcher instructions](https://github.com/byebyebryan/rofi-tmux-plus#launch-the-picker)
-and [development/setup guide](https://github.com/byebyebryan/rofi-tmux-plus/blob/main/docs/maintenance/development.md).
-Use Python 3.11+, the supported Rofi native mode and the exact pinned Tmux
-Observer payload. Cached views require the accepted prepared services; remote
-views require their configured Mesh/SSH route and publisher.
+Use Python 3.11+, Rofi with Mode ABI 7 and the refresh interface, and the exact
+pinned Tmux Observer payload. Cached views require the prepared services.
+Remote views require a configured directional Mesh/SSH route and publisher.
+See the [Tmux Plus setup guide](https://github.com/byebyebryan/rofi-tmux-plus/blob/main/docs/getting-started.md).
 
 Tmux Plus checks the Observer version, complete Python module inventory and
 module hashes. A matching version string on a different source build is insufficient.
 
 ## Release and managed scope
 
-The a8 prerelease is bundle-only, paired with publicly released Tmux Observer a9.
-The Tmux Mesh reader/bridge retains a24 and full-view delivery. Presentation,
-native action and device/desktop acceptance retain their original evidence scope.
+The a9 prerelease is bundle-only and pairs with Tmux Observer a9. The launcher
+checks the packaged mode's integrity and uses Rofi's mode ABI and refresh
+interface for compatibility. The release was qualified with Rofi 2.0.0 and
+2.1.1. The Tmux Mesh reader and bridge use a24 full-view delivery.
+See the [a9 qualification record](https://github.com/byebyebryan/rofi-tmux-plus/blob/406eea2494a0fbc892a643b4fb44fec55d3517a3/docs/maintenance/development.md#package-and-acceptance-boundaries).
 See [compatibility](../compatibility.md) before changing a role's selection.
